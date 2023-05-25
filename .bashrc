@@ -123,7 +123,7 @@ export PATH="$PATH:$BREW_HOME"
 
 eval "$(oh-my-posh init bash --config $(brew --prefix oh-my-posh)/themes/catppuccin_frappe.omp.json)"
 
-alias ls='colorls --sd --gs'
+alias ls='colorls --sd'
 alias open='explorer.exe'
 alias vim='nvim'
 alias gpsh='git push origin'

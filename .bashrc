@@ -126,3 +126,8 @@ eval "$(oh-my-posh init bash --config $(brew --prefix oh-my-posh)/themes/catppuc
 alias ls='colorls --sd --gs'
 alias open='explorer.exe'
 alias vim='nvim'
+alias gpsh='git push origin'
+alias gpll='git pull origin'
+alias ga='git add'
+alias gc='git commit -m'
+alias gs='git status'

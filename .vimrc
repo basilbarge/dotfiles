@@ -18,6 +18,7 @@ set softtabstop=4
 set number
 set relativenumber
 
+set laststatus=2
 
 call plug#begin()
 " The default plugin directory will be as follows:
@@ -34,8 +35,9 @@ Plug 'mattn/vim-lsp-settings'
 
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
-Plug 'liuchengxu/space-vim-dark'
+Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'mattn/emmet-vim'
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
@@ -43,4 +45,10 @@ call plug#end()
 "   filetype indent off   " Disable file-type-specific indentation
 "   syntax off            " Disable syntax highlighting
 
-colorscheme space-vim-dark
+let g:lightline = {
+	\ 'colorscheme': 'onedark',
+	\ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+	\ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+	\ }
+syntax on
+colorscheme onedark

@@ -20,6 +20,18 @@ set relativenumber
 
 set laststatus=2
 
+let g:netrw_keepdir=0
+
+set clipboard+=unnamedplus
+
+let s:clip = '/mnt/c/Windows/System32/clip.exe'
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
+
 call plug#begin()
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'

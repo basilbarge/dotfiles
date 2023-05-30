@@ -2,6 +2,8 @@ let mapleader = " "
 
 nmap <leader>pv :Ex<cr>
 imap <leader>jk <ESC>\n
+nmap <leader>pf :Files<cr>
+nmap <leader>gf :GFiles<cr>
 
 map <up> <Nop>
 map <down> <Nop>

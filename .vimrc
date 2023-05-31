@@ -23,6 +23,7 @@ set relativenumber
 set laststatus=2
 
 let g:netrw_keepdir=0
+let g:context_border_char = '-'
 
 set clipboard+=unnamedplus
 
@@ -54,6 +55,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'wellle/context.vim'
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()

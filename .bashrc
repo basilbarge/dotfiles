@@ -123,7 +123,8 @@ export PATH="$PATH:$BREW_HOME"
 
 eval "$(oh-my-posh init bash --config $(brew --prefix oh-my-posh)/themes/material.omp.json)"
 
-alias ls='colorls --sd'
+alias ls='exa'
+alias cat='batcat'
 alias open='explorer.exe'
 alias vim='nvim'
 alias gpsh='git push origin'

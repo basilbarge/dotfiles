@@ -12,11 +12,8 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
---  use({
---	  'rose-pine/neovim',
---	  as = 'rose-pine',
---  })
-
+  use 'norcalli/nvim-colorizer.lua'
+  use { 'Everblush/nvim', as = 'everblush' }
   use({
 	  'Mofiqul/dracula.nvim',
 	  as = 'dracula',

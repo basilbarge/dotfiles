@@ -21,6 +21,8 @@ set.softtabstop = 4
 set.number = true
 set.relativenumber = true
 
+set.termguicolors = true
+
 vim.o.clipboard = 'unnamedplus'
 
 if vim.fn.has('wsl') == 1 then

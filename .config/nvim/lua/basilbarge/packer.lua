@@ -38,4 +38,8 @@ return require('packer').startup(function(use)
 	}
 	use 'nvim-lua/plenary.nvim'
 	use 'ThePrimeagen/harpoon'
+
+	use 'preservim/nerdtree'
+	use 'Xuyuanp/nerdtree-git-plugin'
+	use 'ryanoasis/vim-devicons'
 end)

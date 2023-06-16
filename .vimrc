@@ -1,6 +1,6 @@
 let mapleader = " "
 
-nmap <leader>pv :Ex<cr>
+nmap <leader>pv :NERDTreeToggle<cr>
 nmap <leader>pf :Files<cr>
 nmap <leader>ps :Ag<cr>
 imap <leader>jk <ESC>\n
@@ -25,6 +25,8 @@ set laststatus=2
 
 let g:netrw_keepdir=0
 let g:context_border_char = '-'
+
+let NERDTreeShowHidden=1
 
 set clipboard+=unnamedplus
 
@@ -59,6 +61,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'wellle/context.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()

@@ -121,8 +121,6 @@ export HOMEBREW_NO_ENV_HINTS=TRUE
 export BREW_HOME="/home/linuxbrew/.linuxbrew/bin"
 export PATH="$PATH:$BREW_HOME"
 
-eval "$(oh-my-posh init bash --config $(brew --prefix oh-my-posh)/themes/material.omp.json)"
-
 alias ls='exa'
 alias cat='batcat'
 alias open='explorer.exe'
@@ -132,3 +130,4 @@ alias gpll='git pull origin'
 alias ga='git add'
 alias gc='git commit -m'
 alias gs='git status'
+eval "$(starship init bash)"

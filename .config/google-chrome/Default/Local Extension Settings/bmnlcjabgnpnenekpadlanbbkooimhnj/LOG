@@ -1,0 +1,14 @@
+2023/07/08-13:59:30.437 1bce Creating DB /home/basilbarge/.config/google-chrome/Default/Local Extension Settings/bmnlcjabgnpnenekpadlanbbkooimhnj since it was missing.
+2023/07/08-13:59:30.975 1bce Reusing MANIFEST /home/basilbarge/.config/google-chrome/Default/Local Extension Settings/bmnlcjabgnpnenekpadlanbbkooimhnj/MANIFEST-000001
+2023/07/08-14:06:18.748 1bce Level-0 table #5: started
+2023/07/08-14:06:18.903 1bce Level-0 table #5: 4035701 bytes OK
+2023/07/08-14:06:18.955 1bce Delete type=0 #3
+2023/07/08-14:44:49.925 1bce Level-0 table #7: started
+2023/07/08-14:44:49.988 1bce Level-0 table #7: 2044587 bytes OK
+2023/07/08-14:44:50.033 1bce Delete type=0 #4
+2023/07/08-15:02:11.588 1bce Level-0 table #9: started
+2023/07/08-15:02:11.658 1bce Level-0 table #9: 2039564 bytes OK
+2023/07/08-15:02:11.694 1bce Delete type=0 #6
+2023/07/09-12:51:39.477 1bce Level-0 table #11: started
+2023/07/09-12:51:39.810 1bce Level-0 table #11: 2097778 bytes OK
+2023/07/09-12:51:40.164 1bce Delete type=0 #8

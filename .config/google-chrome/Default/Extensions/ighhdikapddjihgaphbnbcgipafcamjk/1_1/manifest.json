@@ -1,0 +1,33 @@
+{
+   "description": "Under The Leaf: By Marisol Ortega",
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAppJteeQM3YYeuMLyyp0e7FVoQpbzMKdXbKjRP6vCT+PFaoey0xybwBY5eRSWH8+8T/ewSmmia/pZZ3xh8aW29MS1JSb69t5ZSfhjqGrwLtyZWwSR6Lp6UgUhC03GKXSRtGXNQvo4gChC7egnGALXmEP/quuH/qxlLDTwdnjZqNvcVwJI4yohVQ9WoewefiafrPCld2aup3VRCS2AITDWFg2R7bTnN8D9PI8VIklHEUM3k63yKH+6DtuE3H4/Mqto8M3kz/tBzCjvuf4c8I1aoHIDAU+TLQQwbKyalaUVmVfo6VZq43BoBPD1fk7EFv8UYgWjuKasN7vKcQSf/nRdGQIDAQAB",
+   "manifest_version": 2,
+   "name": "Under The Leaf",
+   "theme": {
+      "colors": {
+         "bookmark_text": [ 255, 255, 255 ],
+         "frame": [ 11, 88, 65 ],
+         "ntp_background": [ 209, 193, 91 ],
+         "ntp_text": [ 255, 255, 255 ],
+         "tab_background_text": [ 255, 255, 255 ],
+         "tab_text": [ 255, 255, 255 ],
+         "toolbar": [ 19, 124, 93 ]
+      },
+      "images": {
+         "theme_ntp_background": "under_the_leaf.png"
+      },
+      "properties": {
+         "ntp_background_alignment": "center",
+         "ntp_background_repeat": "none",
+         "ntp_logo_alternate": 0
+      },
+      "tints": {
+         "buttons": [ -1, 0.57, 0.9605 ],
+         "frame_inactive": [ -1, -1, -1 ],
+         "frame_incognito": [ -1, -1, -1 ],
+         "frame_incognito_inactive": [ -1, -1, -1 ]
+      }
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1"
+}

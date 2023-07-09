@@ -116,10 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export HOMEBREW_NO_ENV_HINTS=TRUE
-
-export BREW_HOME="/home/linuxbrew/.linuxbrew/bin"
-export PATH="$PATH:$BREW_HOME"
+. "$HOME/.cargo/env"
 
 alias ls='exa'
 alias cat='batcat'

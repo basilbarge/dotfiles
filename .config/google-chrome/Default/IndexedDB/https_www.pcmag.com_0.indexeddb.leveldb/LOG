@@ -1,6 +1,0 @@
-2023/07/08-14:06:28.296 1bcd Creating DB /home/basilbarge/.config/google-chrome/Default/IndexedDB/https_www.pcmag.com_0.indexeddb.leveldb since it was missing.
-2023/07/08-14:06:28.453 1bcd Reusing MANIFEST /home/basilbarge/.config/google-chrome/Default/IndexedDB/https_www.pcmag.com_0.indexeddb.leveldb/MANIFEST-000001
-2023/07/09-12:51:17.566 1bcd Level-0 table #5: started
-2023/07/09-12:51:17.590 1bcd Level-0 table #5: 1095 bytes OK
-2023/07/09-12:51:17.626 1bcd Delete type=0 #3
-2023/07/09-12:51:17.626 1bcd Manual compaction at level-0 from (begin) .. (end); will stop at (end)

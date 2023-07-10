@@ -1,0 +1,29 @@
+[Data Source]
+DisplayName=zachb.barge@gmail.com
+Enabled=true
+Parent=3b7db17ed1a672e0104693ae77427b35df15c27f
+
+[Mail Submission]
+SentFolder=folder://local/Sent
+TransportUid=88b979ae21667626a3dc31739252a1ca2f8e30c9
+RepliesToOriginFolder=false
+UseSentFolder=true
+
+[Mail Composition]
+Bcc=
+Cc=
+DraftsFolder=folder://local/Drafts
+ReplyStyle=default
+SignImip=true
+TemplatesFolder=
+StartBottom=inconsistent
+TopSignature=inconsistent
+Language=
+
+[Mail Identity]
+Address=zachb.barge@gmail.com
+Aliases=
+Name=
+Organization=
+ReplyTo=
+SignatureUid=none

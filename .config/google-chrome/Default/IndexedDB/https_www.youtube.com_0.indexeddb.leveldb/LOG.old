@@ -1,0 +1,6 @@
+2023/07/08-14:36:59.511 1bce Creating DB /home/basilbarge/.config/google-chrome/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb since it was missing.
+2023/07/08-14:36:59.665 1bce Reusing MANIFEST /home/basilbarge/.config/google-chrome/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/07/08-14:37:01.959 1bcd Level-0 table #5: started
+2023/07/08-14:37:01.983 1bcd Level-0 table #5: 1474 bytes OK
+2023/07/08-14:37:02.019 1bcd Delete type=0 #3
+2023/07/08-14:37:02.019 1bcd Manual compaction at level-0 from (begin) .. (end); will stop at (end)

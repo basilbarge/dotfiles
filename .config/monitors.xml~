@@ -3,41 +3,6 @@
     <logicalmonitor>
       <x>0</x>
       <y>0</y>
-      <scale>2</scale>
-      <primary>yes</primary>
-      <monitor>
-        <monitorspec>
-          <connector>eDP-1</connector>
-          <vendor>LGD</vendor>
-          <product>0x0587</product>
-          <serial>0x00000000</serial>
-        </monitorspec>
-        <mode>
-          <width>3840</width>
-          <height>2160</height>
-          <rate>60.006000518798828</rate>
-        </mode>
-      </monitor>
-    </logicalmonitor>
-    <disabled>
-      <monitorspec>
-        <connector>DP-5</connector>
-        <vendor>LEN</vendor>
-        <product>LEN LI2223swA</product>
-        <serial>31592E16G1065</serial>
-      </monitorspec>
-      <monitorspec>
-        <connector>DP-3</connector>
-        <vendor>LEN</vendor>
-        <product>LEN LI2223swA</product>
-        <serial>31592E16G0097</serial>
-      </monitorspec>
-    </disabled>
-  </configuration>
-  <configuration>
-    <logicalmonitor>
-      <x>0</x>
-      <y>0</y>
       <scale>1</scale>
       <monitor>
         <monitorspec>

@@ -1,3 +1,7 @@
 .config/gh
 .config/nvim/plugin/packer_compiled.lua
 .config/google-chrome
+.config/dconf
+.config/ibus
+.config/libreoffice
+.config/pulse

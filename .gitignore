@@ -5,3 +5,5 @@
 .config/ibus
 .config/libreoffice
 .config/pulse
+.config/discord
+.config/terminator

@@ -1,21 +1,19 @@
 format = """
 $username\
 $hostname\
+$sudo\
 $battery\
 $directory\
 $git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
 $git_status\
+$git_metrics\
 $lua\
 $nodejs\
 $ruby\
 $python\
 $rust\
-$sudo\
-$status\
-$os
+$os\
+$character
 """
 
 [username]
@@ -27,5 +25,22 @@ format = '[$user]($style)'
 [hostname]
 ssh_only = false
 style = 'blue bold'
-format = '@[$hostname$ssh_symbol]($style) via '
+format = '@[$hostname$ssh_symbol]($style)'
+
+[sudo]
+disabled = false
+format = " [as $symbol]($style)"
+
+[directory]
+format = ' via [$path]($style)[$read_only]($read_only_style) '
+truncation_symbol = "../"
+
+[git_metrics]
+disabled = false
+
+[os]
+disabled = false
+
+[character]
+format = "\n$symbol "
 

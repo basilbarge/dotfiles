@@ -1,8 +1,8 @@
 format = """
+$battery\
 $username\
 $hostname\
 $sudo\
-$battery\
 $directory\
 $git_branch\
 $git_status\
@@ -34,6 +34,16 @@ format = " [as $symbol]($style)"
 [directory]
 format = ' via [$path]($style)[$read_only]($read_only_style) '
 truncation_symbol = "../"
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+format = "[$symbol]($style) "
+
+[[battery.display]]
+threshold = 100
+
 
 [git_metrics]
 disabled = false

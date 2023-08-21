@@ -13,4 +13,7 @@
 .config/enchant
 .config/simple-scan
 .config/evolution
+.config/yelp
+.config/monitors.xml
+.config/monitors.xml~
 .config/terminator/plugins/__pycache__

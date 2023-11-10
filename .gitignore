@@ -17,3 +17,11 @@
 .config/monitors.xml
 .config/monitors.xml~
 .config/terminator/plugins/__pycache__
+.config/Code
+.config/Foxit Software
+.config/Unknown Organization
+.config/autostart
+.config/cef_user_data
+.config/gnome-control-center
+.config/zoom.conf
+.config/zoomus.conf

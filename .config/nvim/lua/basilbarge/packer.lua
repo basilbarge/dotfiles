@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'norcalli/nvim-colorizer.lua'
-  use({'rose-pine/neovim', as = 'rose-pine'})
+  use { 'Everblush/nvim', as = 'everblush' }
 
   use( 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
   use 'nvim-treesitter/nvim-treesitter-context'

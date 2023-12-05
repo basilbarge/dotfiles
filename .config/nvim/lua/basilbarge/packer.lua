@@ -40,4 +40,15 @@ return require('packer').startup(function(use)
 use 'lervag/vimtex'
 use 'nvim-lua/plenary.nvim'
 use 'ThePrimeagen/harpoon'
+use ({
+    'nvimdev/lspsaga.nvim',
+    after = 'nvim-lspconfig',
+    config = function()
+        require('lspsaga').setup({})
+    end,
+})
+use 'lewis6991/gitsigns.nvim'
+use('neovim/nvim-lspconfig')
+use('jose-elias-alvarez/null-ls.nvim')
+use('MunifTanjim/prettier.nvim')
 end)

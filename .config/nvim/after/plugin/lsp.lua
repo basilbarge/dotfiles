@@ -13,7 +13,7 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({})
+	lsp.default_keymaps({})
 end)
 
 require('mason').setup({});

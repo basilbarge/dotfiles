@@ -51,4 +51,5 @@ use 'lewis6991/gitsigns.nvim'
 use('neovim/nvim-lspconfig')
 use('jose-elias-alvarez/null-ls.nvim')
 use('MunifTanjim/prettier.nvim')
+use('onsails/lspkind.nvim')
 end)

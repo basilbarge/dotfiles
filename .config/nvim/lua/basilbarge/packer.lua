@@ -55,13 +55,4 @@ return require('packer').startup(function(use)
 	use 'neovim/nvim-lspconfig'
 	use 'onsails/lspkind.nvim'
 	use 'tpope/vim-fugitive'
-	use {
-		"nvim-neotest/neotest",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"antoinemadec/FixCursorHold.nvim",
-			"nvim-neotest/neotest-jest",
-			"nvim-treesitter/nvim-treesitter"
-		}
-	}
 end)

@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
 		requires = {
 			-- LSP Support
 			{ 'neovim/nvim-lspconfig' }, -- Required
-			{                  -- Optional
+			{                   -- Optional
 				'williamboman/mason.nvim',
 				run = function()
 					pcall(vim.cmd, 'MasonUpdate')
@@ -44,14 +44,23 @@ return require('packer').startup(function(use)
 		branch = "harpoon2",
 		requires = { { "nvim-lua/plenary.nvim" } }
 	}
-	use({
+	use {
 		'nvimdev/lspsaga.nvim',
 		after = 'nvim-lspconfig',
 		config = function()
 			require('lspsaga').setup({})
 		end,
-	})
+	}
 	use 'lewis6991/gitsigns.nvim'
-	use('neovim/nvim-lspconfig')
-	use('onsails/lspkind.nvim')
+	use 'neovim/nvim-lspconfig'
+	use 'onsails/lspkind.nvim'
+	use 'tpope/vim-fugitive'
+	use {
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter"
+		}
+	}
 end)

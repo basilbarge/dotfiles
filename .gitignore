@@ -25,3 +25,16 @@
 .config/gnome-control-center
 .config/zoom.conf
 .config/zoomus.conf
+.config/KDE
+.config/Trolltech.conf
+.config/akregatorrc
+.config/gtk*
+.config/kd*
+.config/baloofilerc
+.config/kde*
+.config/k*
+.config/plasma*
+.config/powermanagementprofilesrc
+.config/xsettingsd/
+.config/systemsettingsrc
+.config/libaccounts-glib/

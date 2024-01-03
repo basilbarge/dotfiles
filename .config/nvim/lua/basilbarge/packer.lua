@@ -55,4 +55,16 @@ return require('packer').startup(function(use)
 	use 'neovim/nvim-lspconfig'
 	use 'onsails/lspkind.nvim'
 	use 'tpope/vim-fugitive'
+
+	use {
+		"stevearc/oil.nvim",
+		config = function()
+			require("oil").setup()
+		end,
+	}
+
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
 end)

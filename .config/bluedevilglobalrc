@@ -1,2 +1,5 @@
+[Adapters]
+30:D1:6B:E3:5A:04_powered=true
+
 [Devices]
 connectedDevices=

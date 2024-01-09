@@ -4,3 +4,5 @@ size = 14.0
 	[font.normal]
 	family = "RobotoMono Nerd Font Mono"
 	style = "Regular"
+[env]
+WINIT_X11_SCALE_FACTOR = "1"

@@ -58,13 +58,6 @@ return require('packer').startup(function(use)
 	use 'nvim-tree/nvim-web-devicons'
 
 	use {
-		"stevearc/oil.nvim",
-		config = function()
-			require("oil").setup()
-		end,
-	}
-
-	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 	}

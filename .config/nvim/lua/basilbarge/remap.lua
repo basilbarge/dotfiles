@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("i", "<leader>jk", "<ESC>")
-vim.keymap.set("n", "<leader>pv", ":Oil<CR>")
+vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y"]])
 vim.keymap.set("n", "<leader Y", [["+Y"]])
 

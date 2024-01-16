@@ -56,10 +56,20 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# Add git information to terminal
+. $HOME/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=""
+export GIT_PS1_SHOWUPSTREAM=""
+export GIT_PS1_STATESEPARATOR=""
+export GIT_PS1_SHOWSTASHSTATE=""
+export GIT_PS1_SHOWCOLORHINTS=true
+export GIT_PS1_SHOWUNTRACKEDFILES=""
+#export GIT_PS1_HIDE_IF_PWD_IGNORED=true
+
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w $(__git_ps1 "(%s)")$ '
 fi
 unset color_prompt force_color_prompt
 

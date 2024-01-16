@@ -6,3 +6,6 @@ size = 14.0
 	style = "Regular"
 [env]
 WINIT_X11_SCALE_FACTOR = "1"
+
+shell = '\n\nshell:\n program: /bin/bash\n args:\n - --login\n'
+

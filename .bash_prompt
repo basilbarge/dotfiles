@@ -1,0 +1,9 @@
+# Add git information to terminal
+. $HOME/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=""
+export GIT_PS1_SHOWUPSTREAM=""
+export GIT_PS1_STATESEPARATOR=""
+export GIT_PS1_SHOWSTASHSTATE=""
+export GIT_PS1_SHOWCOLORHINTS=true
+export GIT_PS1_SHOWUNTRACKEDFILES=""
+

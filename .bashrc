@@ -85,11 +85,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Add git information to prompt
-
-if [ -f ~/.bash_prompt ]; then
-	. ~/.bash_prompt
-fi
+# Oh-my-bash customizations and plugins
+plugins=(git)
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

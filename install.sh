@@ -11,6 +11,7 @@ if [[ $NAME = "Ubuntu" ]]; then
 	sudo apt install bat
 	sudo apt install git
 	sudo apt install tmux
+	sudo apt install curl
 
 	# Install gh cli
 	type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
@@ -26,7 +27,11 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	sudo pacman -S git
 	sudo pacman -S github-cli
 	sudo pacman -S tmux
+	sudo pacman -S curl
 fi
 
 # Install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Install oh-my-bash for easy terminal customization
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"

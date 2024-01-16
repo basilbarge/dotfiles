@@ -38,3 +38,5 @@
 .config/xsettingsd/
 .config/systemsettingsrc
 .config/libaccounts-glib/
+.config/session/
+.config/user-*

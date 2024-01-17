@@ -114,6 +114,7 @@ plugins=(
 #  fi
 
 source "$OSH"/oh-my-bash.sh
+unset CDPATH
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"

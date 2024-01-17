@@ -23,8 +23,8 @@ return {
 			{ 'hrsh7th/nvim-cmp' }, -- Required
 			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
 			{ 'L3MON4D3/LuaSnip' }, -- Required
-		}
-		config = function()
+		},
+		aconfig = function()
 			local lsp = require('lsp-zero').preset({ "recommended" })
 
 			local cmp = require('cmp')

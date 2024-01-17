@@ -60,6 +60,19 @@ if [ -f $HOME/.tmux.conf ]; then
 fi
 sudo ln -s $PWD/.tmux.conf ~
 
+for ITEM in $PWD/.config/*; 
+do
+	BASE=$(basename $ITEM)
+	if [ -d $PWD/.config/$BASE ]; then
+		if [ -d $HOME/.config/$BASE ]; then
+			sudo rm -r $HOME/.config/$BASE
+		fi
+	elif [ -f $PWD/.config/$ITEM ]; then
+		if [ -f $HOME/.config/$BASE ]; then
+			sudo rm $HOME/.config/$BASE
+		fi
+	fi
+done
 sudo ln -s $PWD/.config/* ~/.config
 
 # Source bashrc to get latest configuration

@@ -12,6 +12,7 @@ if [[ $NAME = "Ubuntu" ]]; then
 	yes | sudo apt install git
 	yes | sudo apt install tmux
 	yes | sudo apt install curl
+	yes | sudo apt install neovim
 
 	# Install gh cli
 	type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
@@ -28,6 +29,7 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	yes | sudo pacman -S github-cli
 	yes | sudo pacman -S tmux
 	yes | sudo pacman -S curl
+	yes | sudo pacman -S neovim
 fi
 
 # Install tmux plugin manager

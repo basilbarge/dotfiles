@@ -35,3 +35,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install oh-my-bash for easy terminal customization
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+
+# Create Symbolic links to dotfiles
+sudo ln -s $PWD/.bash_aliases ~
+sudo ln -s $PWD/.bashrc ~
+sudo ln -s $PWD/.inputrc ~
+sudo ln -s $PWD/.tmux.conf ~
+sudo ln -s $PWD/.config/* ~/.config

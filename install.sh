@@ -12,7 +12,10 @@ if [[ $NAME = "Ubuntu" ]]; then
 	yes | sudo apt install git
 	yes | sudo apt install tmux
 	yes | sudo apt install curl
-	yes | sudo apt install neovim
+
+	# Install prequisites for neovim to build from source
+	yes | sudo apt-get install ninja-build gettext cmake unzip curl
+	yes | sudo apt-get install make cmake gettext
 
 	# Install gh cli
 	type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
@@ -29,8 +32,16 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	yes | sudo pacman -S github-cli
 	yes | sudo pacman -S tmux
 	yes | sudo pacman -S curl
-	yes | sudo pacman -S neovim
+
+	# Install prequisites for neovim to build from source
+	yes | sudo pacman -S base-devel cmake unzip ninja curl
+	yes | sudo pacman -S make cmake gettext
 fi
+
+# Install and build Neovim from source
+git clone https://github.com/neovim/neovim ~
+cd ~/neovim $$ sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
 
 # Install tmux plugin manager
 if [ -d $HOME/.tmux/plugins/tpm ]; then

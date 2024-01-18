@@ -35,7 +35,6 @@ return {
 					vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 					-- Buffer local mappings.
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
-					local test = 'test'
 					local opts = { buffer = ev.buf }
 					vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 					vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
@@ -66,46 +65,43 @@ return {
 				-- The first entry (without a key) will be the default handler
 				-- and will be called for each installed server that doesn't have
 				-- a dedicated handler.
-				function (server_name) -- default handler (optional)
+				function(server_name) -- default handler (optional)
 					require("lspconfig")[server_name].setup {}
 				end,
 				-- Next, you can provide a dedicated handler for specific servers.
 				-- For example, a handler override for the `rust_analyzer`:
-				-- ["rust_analyzer"] = function ()
-					-- 	require("rust-tools").setup {}
-					-- end
-				}
-			end
-		},
-		{
-			'hrsh7th/nvim-cmp',
-			config = function()
-				-- Set up nvim-cmp.
-				local cmp = require'cmp'
-				cmp.setup({
-					snippet = {
-						expand = function(args)
-							require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-						end,
-					},
-					window = {
-						completion = cmp.config.window.bordered(),
-						documentation = cmp.config.window.bordered(),
-					},
-					mapping = cmp.mapping.preset.insert({
-						['<C-b>'] = cmp.mapping.scroll_docs(-4),
-						['<C-f>'] = cmp.mapping.scroll_docs(4),
-						['<C-Space>'] = cmp.mapping.complete(),
-						['<C-e>'] = cmp.mapping.abort(),
-						['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-					}),
-					sources = cmp.config.sources({
-						{ name = 'nvim_lsp' },
-						{ name = 'luasnip' }, -- For luasnip users.
-					}, {
-						{ name = 'buffer' },
-					})
+			}
+		end
+	},
+	{
+		'hrsh7th/nvim-cmp',
+		config = function()
+			-- Set up nvim-cmp.
+			local cmp = require 'cmp'
+			cmp.setup({
+				snippet = {
+					expand = function(args)
+						require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+					end,
+				},
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
+				},
+				mapping = cmp.mapping.preset.insert({
+					['<C-b>'] = cmp.mapping.scroll_docs(-4),
+					['<C-f>'] = cmp.mapping.scroll_docs(4),
+					['<C-Space>'] = cmp.mapping.complete(),
+					['<C-e>'] = cmp.mapping.abort(),
+					['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+				}),
+				sources = cmp.config.sources({
+					{ name = 'nvim_lsp' },
+					{ name = 'luasnip' }, -- For luasnip users.
+				}, {
+					{ name = 'buffer' },
 				})
+			})
 
 			-- Set configuration for specific filetype.
 			cmp.setup.filetype('gitcommit', {
@@ -138,15 +134,15 @@ return {
 			-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 			-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 			-- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-				-- 	capabilities = capabilities
-				-- }
-			end
-		},
+			-- 	capabilities = capabilities
+			-- }
+		end
+	},
 	{ 'hrsh7th/cmp-nvim-lsp' },
 	{ 'saadparwaiz1/cmp_luasnip' },
 	{
 		'L3MON4D3/LuaSnip',
-		version= "v2.*",
+		version = "v2.*",
 		build = "make install_jsregexp"
 	},
 

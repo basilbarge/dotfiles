@@ -14,6 +14,7 @@ return {
 			},
 		}
 
+		vim.keymap.set('n', '<leader>e', builtin.diagnostics, {})
 		vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 		vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 		vim.keymap.set('n', '<leader>bf', builtin.current_buffer_fuzzy_find, {})

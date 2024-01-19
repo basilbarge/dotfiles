@@ -1,7 +1,5 @@
 . /etc/os-release
 
-echo $NAME
-
 if [ $NAME = "Ubuntu" ]; then
 	alias cat='batcat'
 else

@@ -1,5 +1,14 @@
+. /etc/os-release
+
+echo $NAME
+
+if [ $NAME = "Ubuntu" ]; then
+	alias cat='batcat'
+else
+	alias cat='bat'
+fi
+
 alias ls='exa'
-alias cat='bat'
 alias open='explorer.exe'
 alias vim='nvim'
 alias gpsh='git push origin'

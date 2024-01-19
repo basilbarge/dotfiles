@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("i", "<leader>jk", "<ESC>")
-vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
+vim.keymap.set("n", "<leader>pv", "<cmd>Ex<CR>")
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y"]])
 vim.keymap.set("n", "<leader Y", [["+Y"]])
 
@@ -13,10 +13,6 @@ vim.keymap.set("", "<right>", "<noop>")
 local set = vim.opt
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-vim.keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
-vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 
 vim.cmd("set autochdir")
 --set.autochdir = true

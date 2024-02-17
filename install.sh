@@ -39,8 +39,8 @@ elif [[ $NAME = "Arch Linux" ]]; then
 fi
 
 # Install and build Neovim from source
-git clone https://github.com/neovim/neovim ~
-cd ~/neovim $$ sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
+git clone https://github.com/neovim/neovim ~/neovim
+cd ~/neovim && sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
 # Install tmux plugin manager
@@ -90,7 +90,11 @@ sudo ln -s $PWD/.config/* ~/.config
 
 # Install nvm and LTS of node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-nvm install --lts
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nvm install --lts
 # Source bashrc to get latest configuration
-. ~/.bashrc
+source ~/.bashrc

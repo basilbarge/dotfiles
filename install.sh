@@ -80,6 +80,12 @@ if [ -f $HOME/.tmux.conf ] || [ -L $HOME/.tmux.conf ]; then
 fi
 sudo ln -s $DOTFILES_REPO/.tmux.conf ~
 
+if [ -f $HOME/.wezterm.lua ] || [ -L $HOME/.wezterm.lua ]; then
+	echo "Removing .wezterm.lua from home directory"
+	sudo rm $HOME/.wezterm.lua
+fi
+sudo ln -s $DOTFILES_REPO/.wezterm.lua ~
+
 for ITEM in $DOTFILES_REPO/.config/*; 
 do
 	BASE=$(basename $ITEM)

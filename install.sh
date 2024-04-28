@@ -51,20 +51,21 @@ if [ -d $HOME/.tmux/plugins/tpm ]; then
 fi
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Install oh-my-bash for easy terminal customization
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
-
 # Create Symbolic links to dotfiles
 if [ -f $HOME/.bash_aliases ] || [ -L $HOME/.bash_aliases ]; then
 	echo "Removing .bash_aliases from home directory"
 	sudo rm $HOME/.bash_aliases
 fi
+
+echo "Linking bash aliases from $DOTFILES_REPO/.bash_aliases to ~"
 sudo ln -s $DOTFILES_REPO/.bash_aliases ~
 
 if [ -f $HOME/.bashrc ] || [ -L $HOME/.bashrc ]; then
 	echo "Removing .bash_rc from home directory"
 	sudo rm $HOME/.bashrc
 fi
+
+echo "Linking bashrc from $DOTFILES_REPO/.bashrc to ~"
 sudo ln -s $DOTFILES_REPO/.bashrc ~
 
 if [ -f $HOME/.inputrc ] || [ -L $HOME/.inputrc ]; then
@@ -104,5 +105,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 nvm install --lts
+
+# Install Wezterm
+$curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+sudo apt update
+sudo apt install wezterm
+
+# Install oh-my-bash for easy terminal customization
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+
 # Source bashrc to get latest configuration
 source ~/.bashrc

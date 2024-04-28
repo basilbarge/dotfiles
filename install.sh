@@ -14,6 +14,13 @@ if [[ $NAME = "Ubuntu" ]]; then
 	yes | sudo apt install git
 	yes | sudo apt install tmux
 	yes | sudo apt install curl
+	yes | sudo apt install i3
+
+	# Install Wezterm
+	$curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+	echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+	sudo apt update
+	sudo apt install wezterm
 
 	# Install prequisites for neovim to build from source
 	yes | sudo apt-get install ninja-build gettext cmake unzip curl
@@ -111,12 +118,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 nvm install --lts
-
-# Install Wezterm
-$curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
-echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
-sudo apt update
-sudo apt install wezterm
 
 # Install oh-my-bash for easy terminal customization
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"

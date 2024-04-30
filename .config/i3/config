@@ -52,10 +52,10 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec wezterm
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -86,6 +86,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# lock screen
+bindsym Mod4+l exec "i3lock -c 000000"
+
 # split in horizontal orientation
 bindsym $mod+| split h
 
@@ -108,6 +111,9 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+# set wallpaper
+exec_always feh --bg-fill /usr/share/backgrounds/Monument_valley_by_orbitelambda.jpg
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -136,6 +142,7 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -188,3 +195,15 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Allocate applications to workspace
+assign [class="^firefox"] $ws1
+assign [class="wezterm"] $ws2
+assign [class="Spotify"] $ws3
+
+exec --no-startup-id firefox
+exec --no-startup-id wezterm
+exec --no-startup-id spotify
+
+# Update display resolution
+exec_always xrandr --output eDP-1 --mode 1920x1080

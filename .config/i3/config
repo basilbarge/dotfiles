@@ -189,6 +189,7 @@ mode "resize" {
 }
 
 default_border pixel 3
+default_floating_border pixel 3
 gaps outer 2
 gaps inner 2
 

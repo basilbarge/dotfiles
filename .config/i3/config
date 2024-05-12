@@ -188,6 +188,10 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+default_border pixel 3
+gaps outer 2
+gaps inner 2
+
 bindsym $mod+r mode "resize"
 
 # Allocate applications to workspace

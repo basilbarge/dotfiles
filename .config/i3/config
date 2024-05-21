@@ -196,13 +196,18 @@ gaps inner 2
 bindsym $mod+r mode "resize"
 
 # Allocate applications to workspace
-assign [class="^Brave-browser"] $ws1
-assign [class="wezterm"] $ws2
-assign [class="Spotify"] $ws3
+#assign [class="^Brave-browser"] $ws1
+#assign [class="wezterm"] $ws2
+#assign [class="Spotify"] $ws3
 
-exec --no-startup-id brave-browser
-exec --no-startup-id wezterm
-exec --no-startup-id spotify
+#exec --no-startup-id brave-browser
+#exec --no-startup-id wezterm
+#exec --no-startup-id spotify
+#
+#for_window [class="^Brave-browser"] move to workspace $ws1
+#for_window [class="wezterm"] move to workspace $ws2
+#for_window [class="Spotify"] move to workspace $ws3
+
 
 # Update display resolution
 exec_always xrandr --output eDP-1 --mode 1920x1080

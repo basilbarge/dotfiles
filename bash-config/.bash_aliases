@@ -14,9 +14,9 @@ alias gpll='git pull origin'
 alias ga='git add'
 alias gc='git commit -m'
 alias gs='git status'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='exa -alF'
+alias la='exa -A'
+alias l='exa -CF'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

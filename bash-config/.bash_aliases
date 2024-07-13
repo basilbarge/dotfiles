@@ -6,7 +6,7 @@ else
 	alias cat='bat'
 fi
 
-alias ls='exa'
+alias ls='eza'
 alias open='explorer.exe'
 alias vim='nvim'
 alias gpsh='git push origin'
@@ -14,9 +14,9 @@ alias gpll='git pull origin'
 alias ga='git add'
 alias gc='git commit -m'
 alias gs='git status'
-alias ll='exa -alF'
-alias la='exa -A'
-alias l='exa -CF'
+alias ll='eza -alF'
+alias la='eza -A'
+alias l='eza -CF'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

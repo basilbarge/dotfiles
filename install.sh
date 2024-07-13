@@ -15,6 +15,7 @@ if [[ $NAME = "Ubuntu" ]]; then
 	yes | sudo apt install tmux
 	yes | sudo apt install curl
 	yes | sudo apt install i3
+	yes | sudo apt install stow
 
 	# Install Wezterm
 	$curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
@@ -41,74 +42,13 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	yes | sudo pacman -S github-cli
 	yes | sudo pacman -S tmux
 	yes | sudo pacman -S curl
+	yes | sudo pacman -S stow
 
 	# Install prequisites for neovim to build from source
 	yes | sudo pacman -S base-devel cmake unzip ninja curl
 	yes | sudo pacman -S make cmake gettext
 fi
 
-# Install and build Neovim from source
-git clone https://github.com/neovim/neovim ~/neovim
-cd ~/neovim && sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make install
-
-# Install tmux plugin manager
-if [ -d $HOME/.tmux/plugins/tpm ]; then
-	sudo rm -r $HOME/.tmux/plugins/tpm
-fi
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# Create Symbolic links to dotfiles
-if [ -f $HOME/.bash_aliases ] || [ -L $HOME/.bash_aliases ]; then
-	echo "Removing .bash_aliases from home directory"
-	sudo rm $HOME/.bash_aliases
-fi
-
-echo "Linking bash aliases from $DOTFILES_REPO/.bash_aliases to ~"
-sudo ln -s $DOTFILES_REPO/.bash_aliases ~
-
-if [ -f $HOME/.bashrc ] || [ -L $HOME/.bashrc ]; then
-	echo "Removing .bash_rc from home directory"
-	sudo rm $HOME/.bashrc
-fi
-
-echo "Linking bashrc from $DOTFILES_REPO/.bashrc to ~"
-sudo ln -s $DOTFILES_REPO/.bashrc ~
-
-if [ -f $HOME/.inputrc ] || [ -L $HOME/.inputrc ]; then
-	echo "Removing .inputrc from home directory"
-	sudo rm $HOME/.inputrc
-fi
-sudo ln -s $DOTFILES_REPO/.inputrc ~
-
-if [ -f $HOME/.tmux.conf ] || [ -L $HOME/.tmux.conf ]; then
-	echo "Removing .tmux.conf from home directory"
-	sudo rm $HOME/.tmux.conf
-fi
-sudo ln -s $DOTFILES_REPO/.tmux.conf ~
-
-if [ -f $HOME/.wezterm.lua ] || [ -L $HOME/.wezterm.lua ]; then
-	echo "Removing .wezterm.lua from home directory"
-	sudo rm $HOME/.wezterm.lua
-fi
-sudo ln -s $DOTFILES_REPO/.wezterm.lua ~
-
-for ITEM in $DOTFILES_REPO/.config/*; 
-do
-	BASE=$(basename $ITEM)
-	if [ -d $DOTFILES_REPO/.config/$BASE ]; then
-		if [ -d $HOME/.config/$BASE ] || [ -L $HOME/.config/$BASE ]; then
-			echo "Removing directories from .config in home directory"
-			sudo rm -r $HOME/.config/$BASE
-		fi
-	elif [ -f $DOTFILES_REPO/.config/$ITEM ]; then
-		if [ -f $HOME/.config/$BASE ] || [ -L $HOME/.config/$BASE ]; then
-			echo "Removing files from .config in home directory"
-			sudo rm $HOME/.config/$BASE
-		fi
-	fi
-done
-sudo ln -s $DOTFILES_REPO/.config/* ~/.config
 
 # Install nvm and LTS of node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash

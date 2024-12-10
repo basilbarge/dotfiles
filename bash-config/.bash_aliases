@@ -17,6 +17,7 @@ alias gs='git status'
 alias ll='eza -alF'
 alias la='eza -A'
 alias l='eza -CF'
+alias lg='lazygit'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

@@ -46,7 +46,12 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	yes | sudo pacman -S github-cli
 	yes | sudo pacman -S tmux
 	yes | sudo pacman -S curl
+	yes | sudo pacman -S eza
 	yes | sudo pacman -S stow
+
+	# Make sure inetutils is installed to give us hostname command
+	yes | sudo pacman -S inetutils
+
 	yes | sudo pacman -S tldr
 
 	# Update tldr doc respository

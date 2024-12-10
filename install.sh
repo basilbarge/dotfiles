@@ -70,5 +70,11 @@ nvm install --lts
 # Install oh-my-bash for easy terminal customization
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
+stow --adopt bash-config
+stow nvim
+stow tmux
+
+git reset --hard
+
 # Source bashrc to get latest configuration
 source ~/.bashrc

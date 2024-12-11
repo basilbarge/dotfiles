@@ -78,6 +78,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/mast
 stow --adopt bash-config
 stow nvim
 stow tmux
+stow eza
 
 git reset --hard
 

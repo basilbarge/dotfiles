@@ -13,6 +13,13 @@ return {
 				},
 			},
 		}
+		require('telescope').setup {
+			pickers = {
+				find_files = {
+					theme = "ivy",
+				}
+			}
+		}
 
 		vim.keymap.set('n', '<leader>e', builtin.diagnostics, {})
 		vim.keymap.set('n', '<leader>pf', builtin.find_files, {})

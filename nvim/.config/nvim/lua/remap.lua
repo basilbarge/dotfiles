@@ -10,6 +10,9 @@ vim.keymap.set("", "<down>", "<noop>")
 vim.keymap.set("", "<left>", "<noop>")
 vim.keymap.set("", "<right>", "<noop>")
 
+vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
+
 local set = vim.opt
 
 local opts = { noremap = true, silent = true }

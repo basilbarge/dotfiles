@@ -72,6 +72,9 @@ return {
 			-- Set up nvim-cmp.
 			local cmp = require 'cmp'
 			cmp.setup({
+				formatting = {
+					format = require("nvim-highlight-colors").format
+				},
 				snippet = {
 					expand = function(args)
 						require('luasnip').lsp_expand(args.body) -- For `luasnip` users.

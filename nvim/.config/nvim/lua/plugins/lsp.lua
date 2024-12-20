@@ -1,33 +1,6 @@
 return {
 	{
-		'nvim-treesitter/nvim-treesitter',
-		build = ":TSUpdate",
-		config = function ()
-			local configs = require("nvim-treesitter.configs")
-
-			configs.setup({
-				ensure_installed = { "go", "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
-				sync_install = false,
-				highlight = { enable = true },
-				indent = { enable = true },
-			})
-		end
-	},
-	'nvim-treesitter/nvim-treesitter-context',
-	'williamboman/mason-lspconfig.nvim',
-	{
-		'williamboman/mason.nvim',
-		config = function()
-			require('mason').setup()
-			-- pcall(vim.cmd, 'MasonUpdate')
-		end,
-	},
-	{
 		'neovim/nvim-lspconfig',
-		dependencies = {
-			'williamboman/mason.nvim',
-			'williamboman/mason-lspconfig.nvim',
-		},
 		config = function()
 			-- Use LspAttach autocommand to only map the following keys
 			-- after the language server attaches to the current buffer
@@ -60,90 +33,94 @@ return {
 			})
 		end
 	},
-	{
-		'williamboman/mason-lspconfig.nvim',
-		config = function()
-			require('mason-lspconfig').setup()
-			require("mason-lspconfig").setup_handlers {
-				-- The first entry (without a key) will be the default handler
-				-- and will be called for each installed server that doesn't have
-				-- a dedicated handler.
-				function(server_name) -- default handler (optional)
-					require("lspconfig")[server_name].setup {}
-				end,
-				-- Next, you can provide a dedicated handler for specific servers.
-				-- For example, a handler override for the `rust_analyzer`:
-			}
-		end
-	},
-	{
-		'hrsh7th/nvim-cmp',
-		config = function()
-			-- Set up nvim-cmp.
-			local cmp = require 'cmp'
-			cmp.setup({
-				formatting = {
-					format = require("nvim-highlight-colors").format
-				},
-				snippet = {
-					expand = function(args)
-						require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-					end,
-				},
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				},
-				mapping = cmp.mapping.preset.insert({
-					['<C-b>'] = cmp.mapping.scroll_docs(-4),
-					['<C-f>'] = cmp.mapping.scroll_docs(4),
-					['<C-Space>'] = cmp.mapping.complete(),
-					['<C-e>'] = cmp.mapping.abort(),
-					['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-				}),
-				sources = cmp.config.sources({
-					{ name = 'nvim_lsp' },
-					{ name = 'luasnip' }, -- For luasnip users.
-				}, {
-					{ name = 'buffer' },
-				})
-			})
+	--{
+	--	'williamboman/mason-lspconfig.nvim',
+	--	config = function()
+	--		require('mason-lspconfig').setup()
+	--		require("mason-lspconfig").setup_handlers {
+	--			-- The first entry (without a key) will be the default handler
+	--			-- and will be called for each installed server that doesn't have
+	--			-- a dedicated handler.
+	--			function(server_name) -- default handler (optional)
+	--				require("lspconfig")[server_name].setup {}
+	--			end,
+	--			-- Next, you can provide a dedicated handler for specific servers.
+	--			-- For example, a handler override for the `rust_analyzer`:
+	--		}
+	--	end
+	--},
+	--{
+	--	'hrsh7th/nvim-cmp',
+	--	config = function()
+	--		-- Set up nvim-cmp.
+	--		local cmp = require 'cmp'
+	--		cmp.setup({
+	--			formatting = {
+	--				format = require("nvim-highlight-colors").format
+	--			},
+	--			snippet = {
+	--				expand = function(args)
+	--					require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+	--				end,
+	--			},
+	--			window = {
+	--				completion = cmp.config.window.bordered(),
+	--				documentation = cmp.config.window.bordered(),
+	--			},
+	--			mapping = cmp.mapping.preset.insert({
+	--				['<C-b>'] = cmp.mapping.scroll_docs(-4),
+	--				['<C-f>'] = cmp.mapping.scroll_docs(4),
+	--				['<C-Space>'] = cmp.mapping.complete(),
+	--				['<C-e>'] = cmp.mapping.abort(),
+	--				['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+	--			}),
+	--			sources = cmp.config.sources({
+	--				{ name = 'nvim_lsp' },
+	--				{ name = 'luasnip' }, -- For luasnip users.
+	--			}, {
+	--				{ name = 'buffer' },
+	--			})
+	--		})
 
-			-- Set configuration for specific filetype.
-			cmp.setup.filetype('gitcommit', {
-				sources = cmp.config.sources({
-					{ name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
-				}, {
-					{ name = 'buffer' },
-				})
-			})
+	--		-- Set configuration for specific filetype.
+	--		cmp.setup.filetype('gitcommit', {
+	--			sources = cmp.config.sources({
+	--				{ name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+	--			}, {
+	--				{ name = 'buffer' },
+	--			})
+	--		})
 
-			-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-			cmp.setup.cmdline({ '/', '?' }, {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = {
-					{ name = 'buffer' }
-				}
-			})
+	--		-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+	--		cmp.setup.cmdline({ '/', '?' }, {
+	--			mapping = cmp.mapping.preset.cmdline(),
+	--			sources = {
+	--				{ name = 'buffer' }
+	--			}
+	--		})
 
-			-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-			cmp.setup.cmdline(':', {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = cmp.config.sources({
-					{ name = 'path' }
-				}, {
-					{ name = 'cmdline' }
-				})
-			})
+	--		-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+	--		cmp.setup.cmdline(':', {
+	--			mapping = cmp.mapping.preset.cmdline(),
+	--			sources = cmp.config.sources({
+	--				{ name = 'path' }
+	--			}, {
+	--				{ name = 'cmdline' }
+	--			})
+	--		})
 
-			-- Set up lspconfig.
-			-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
-			-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-			-- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-			-- 	capabilities = capabilities
-			-- }
-		end
-	},
-	{ 'hrsh7th/cmp-nvim-lsp' },
-	{ 'saadparwaiz1/cmp_luasnip' },
+	--		-- Set up lspconfig.
+	--		-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+	--		-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+	--		-- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+	--		-- 	capabilities = capabilities
+	--		-- }
+	--		local capabilites = require('cmp_nvim_lsp').default_capabilities()
+	--		require('lspconfig')['gopls'].setup {
+	--			capabilities = capabilites
+	--		}
+	--	end
+	--},
+	--{ 'hrsh7th/cmp-nvim-lsp' },
+	--{ 'saadparwaiz1/cmp_luasnip' },
 }

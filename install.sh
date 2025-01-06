@@ -12,7 +12,7 @@ if [[ $NAME = "Ubuntu" ]]; then
 	yes | sudo apt install neofetch
 	yes | sudo apt install bat
 	yes | sudo apt install git
-	yes | sudo apt install tmux
+	yes | sudo apt install zellij
 	yes | sudo apt install curl
 	yes | sudo apt install i3
 	yes | sudo apt install stow
@@ -44,7 +44,7 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	yes | sudo pacman -S bat
 	yes | sudo pacman -S git
 	yes | sudo pacman -S github-cli
-	yes | sudo pacman -S tmux
+	yes | sudo pacman -S zellij
 	yes | sudo pacman -S curl
 	yes | sudo pacman -S eza
 	yes | sudo pacman -S stow
@@ -77,7 +77,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/mast
 
 stow --adopt bash-config
 stow nvim
-stow tmux
+stow zellij
 stow eza
 
 git reset --hard

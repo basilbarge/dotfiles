@@ -17,6 +17,7 @@ if [[ $NAME = "Ubuntu" ]]; then
 	yes | sudo apt install i3
 	yes | sudo apt install stow
 	yes | sudo apt install tldr
+	yes | sudo apt install fzf
 
 	# Update tldr doc repository
 	tldr -u
@@ -48,6 +49,7 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	yes | sudo pacman -S curl
 	yes | sudo pacman -S eza
 	yes | sudo pacman -S stow
+	yes | sudo pacman -S fzf
 
 	# Make sure inetutils is installed to give us hostname command
 	yes | sudo pacman -S inetutils

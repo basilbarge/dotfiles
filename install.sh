@@ -81,6 +81,10 @@ stow --adopt bash-config
 stow nvim
 stow zellij
 stow eza
+stow bat
+
+# Build bat cache to make custome themes available
+bat cache --build
 
 git reset --hard
 

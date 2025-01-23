@@ -77,11 +77,19 @@ nvm install --lts
 # Install oh-my-bash for easy terminal customization
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
-stow --adopt bash-config
-stow nvim
-stow zellij
-stow eza
-stow bat
+STOW_DIRS=$(find $(pwd) -mindepth 1 -maxdepth 1 -type d)
+
+# Use stow for all directories in the dotfiles repo
+for DIR in $STOW_DIRS
+do
+	DIR_BASE_NAME=$(basename $DIR)
+
+	if [[ $DIR_BASE_NAME == "bash-config" ]]; then
+		stow --adopt $DIR_BASE_NAME
+	else
+		stow $DIR_BASE_NAME
+	fi
+done
 
 # Build bat cache to make custome themes available
 bat cache --build

@@ -86,6 +86,8 @@ do
 
 	if [[ $DIR_BASE_NAME == "bash-config" ]]; then
 		stow --adopt $DIR_BASE_NAME
+	elif [[ $DIR_BASE_NAME == ".git" ]]; then
+		continue
 	else
 		stow $DIR_BASE_NAME
 	fi

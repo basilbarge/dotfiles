@@ -98,6 +98,8 @@ bat cache --build
 
 git reset --hard
 
+git config --global core.editor "nvim"
+
 git config --global core.pager "bat --style=plain" --replace-all
 
 # Source bashrc to get latest configuration

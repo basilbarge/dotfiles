@@ -18,6 +18,7 @@ if [[ $NAME = "Ubuntu" ]]; then
 	yes | sudo apt install stow
 	yes | sudo apt install tldr
 	yes | sudo apt install fzf
+	yes | sudo apt install gum
 
 	# Update tldr doc repository
 	tldr -u
@@ -50,6 +51,7 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	yes | sudo pacman -S eza
 	yes | sudo pacman -S stow
 	yes | sudo pacman -S fzf
+	yes | sudo pacman -S gum
 
 	# Make sure inetutils is installed to give us hostname command
 	yes | sudo pacman -S inetutils

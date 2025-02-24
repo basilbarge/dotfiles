@@ -102,5 +102,15 @@ git config --global core.editor "nvim"
 
 git config --global core.pager "bat --style=plain" --replace-all
 
+git config --global push.autoSetupRemote true
+
+git config --global merge.tool nvimdiff2
+
+git config --global diff.tool nvimdiff
+
+gh config set editor "nvim"
+
+gh config set pager "bat --style=plain" --replace-all
+
 # Source bashrc to get latest configuration
 source ~/.bashrc

@@ -20,6 +20,8 @@ if [[ $NAME = "Ubuntu" ]]; then
 	yes | sudo apt install fzf
 	yes | sudo apt install gum
 
+	BAT_NAME="batcat"
+
 	# Update tldr doc repository
 	tldr -u
 
@@ -52,6 +54,8 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	yes | sudo pacman -S stow
 	yes | sudo pacman -S fzf
 	yes | sudo pacman -S gum
+
+	BAT_NAME="bat"
 
 	# Make sure inetutils is installed to give us hostname command
 	yes | sudo pacman -S inetutils
@@ -102,7 +106,7 @@ git reset --hard
 
 git config --global core.editor "nvim"
 
-git config --global core.pager "bat --style=plain" --replace-all
+git config --global core.pager "$BAT_NAME --style=plain" --replace-all
 
 git config --global push.autoSetupRemote true
 
@@ -112,7 +116,7 @@ git config --global diff.tool nvimdiff
 
 gh config set editor "nvim"
 
-gh config set pager "bat --style=plain" --replace-all
+gh config set pager "$BAT_NAME --style=plain" --replace-all
 
 # Source bashrc to get latest configuration
 source ~/.bashrc

@@ -1,6 +1,6 @@
 . /etc/os-release
 
-if [ "$NAME" = "Ubuntu" ]; then
+if [[ "$NAME" = "Ubuntu" || "$NAME" = 'Pop!_OS' ]]; then
 	alias cat='batcat'
 else
 	alias cat='bat'

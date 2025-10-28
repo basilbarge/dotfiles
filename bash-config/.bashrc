@@ -152,3 +152,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add go to PATH
 export PATH=$PATH:/usr/local/go/bin
+. "$HOME/.cargo/env"
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"

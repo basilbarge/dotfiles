@@ -22,11 +22,11 @@ return {
 		end)
 		vim.keymap.set('n', '<leader>gf', ":Pick files tool='git'<CR>", {})
 		vim.keymap.set('n', '<leader>fb', function()
-			MiniPick.builtin.grep_live(
+			MiniExtra.pickers.buf_lines(
+				nil,
 				{
-					globs = { vim.fn.expand("%:t") }
-				},
-				nil
+					scope = "current"
+				}
 			)
 		end)
 		vim.keymap.set('n', '<leader>fh', ":Pick help<CR>", {})

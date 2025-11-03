@@ -73,6 +73,10 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	yes | sudo pacman -S make cmake gettext
 fi
 
+# Install rust and cargo with rustup
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
 
 # Install nvm and LTS of node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash

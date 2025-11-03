@@ -9,7 +9,7 @@ DOTFILES_REPO=$PWD
 
 if [[ $NAME = "Ubuntu" ]]; then
 	echo "Installing packages in Ubuntu"
-	yes | sudo apt install neofetch
+	yes | sudo apt install fastetch
 	yes | sudo apt install bat
 	yes | sudo apt install git
 	yes | sudo apt install zellij
@@ -47,7 +47,7 @@ if [[ $NAME = "Ubuntu" ]]; then
 		&& sudo apt install gh -y
 elif [[ $NAME = "Arch Linux" ]]; then
 	echo "Installing packages for Arch Linux"
-	yes | sudo pacman -S neofetch
+	yes | sudo pacman -S fastfetch
 	yes | sudo pacman -S bat
 	yes | sudo pacman -S git
 	yes | sudo pacman -S github-cli

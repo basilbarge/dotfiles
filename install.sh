@@ -125,5 +125,9 @@ gh config set editor "nvim"
 
 gh config set pager "$BAT_NAME --style=plain" --replace-all
 
+# Initialize and update submodules
+git submodule init
+git submodule update
+
 # Source bashrc to get latest configuration
 source ~/.bashrc

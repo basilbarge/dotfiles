@@ -35,7 +35,6 @@ if [[ $NAME = "Ubuntu" ]]; then
 
 	# Install prequisites for neovim to build from source
 	yes | sudo apt-get install ninja-build gettext cmake unzip curl
-	yes | sudo apt-get install make cmake gettext
 
 	# Install gh cli
 	type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
@@ -67,9 +66,17 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	tldr -u
 
 	# Install prequisites for neovim to build from source
-	yes | sudo pacman -S base-devel cmake unzip ninja curl
-	yes | sudo pacman -S make cmake gettext
+	sudo pacman -S base-devel cmake unzip ninja curl
 fi
+
+# Build neovim from source
+git clone https://github.com/neovim/neovim
+cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+git checkout stable
+sudo make install
+
+# Navigate back to dotfiles directory to finish install
+cd ~/dotfiles
 
 # Install rust and cargo with rustup
 

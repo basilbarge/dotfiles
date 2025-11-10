@@ -5,7 +5,12 @@ return {
 	},
 	version = false,
 	config = function()
-		require("mini.pick").setup()
+		require("mini.pick").setup({
+			mappings = {
+				choose_marked = "<C-q>"
+			}
+		})
+
 		require("mini.extra").setup()
 
 		vim.keymap.set('n', '<leader>e', ":Pick diagnostic scope='current'<CR>", {})

@@ -107,7 +107,7 @@ do
 done
 
 # Build bat cache to make custome themes available
-bat cache --build
+$BAT_NAME cache --build
 
 git reset --hard
 

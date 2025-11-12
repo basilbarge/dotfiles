@@ -133,6 +133,10 @@ gh config set editor "nvim"
 
 gh config set pager "$BAT_NAME --style=plain" --replace-all
 
+# Configure global git settings
+git config --global user.email "zachb.barge@gmail.com" 
+git config --global user.name "Zach Barge"
+
 # Initialize and update submodules
 git submodule init
 git submodule update

@@ -9,6 +9,9 @@ DOTFILES_REPO=$PWD
 
 if [[ $NAME = "Ubuntu" ]]; then
 	echo "Installing packages in Ubuntu"
+
+	sudo apt update
+
 	yes | sudo apt install bat
 	yes | sudo apt install git
 	yes | sudo apt install curl
@@ -26,7 +29,6 @@ if [[ $NAME = "Ubuntu" ]]; then
 	wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
 	echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
 	sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
-	sudo apt update
 	sudo apt install -y eza
 
 	# Update tldr doc repository
@@ -44,6 +46,9 @@ if [[ $NAME = "Ubuntu" ]]; then
 		&& sudo apt install gh -y
 elif [[ $NAME = "Arch Linux" ]]; then
 	echo "Installing packages for Arch Linux"
+	
+	sudo pacman -Syu
+
 	yes | sudo pacman -S bat
 	yes | sudo pacman -S git
 	yes | sudo pacman -S github-cli

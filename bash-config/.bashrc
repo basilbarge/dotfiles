@@ -5,16 +5,14 @@ case $- in
 esac
 
 # Path to your oh-my-bash installation.
-export OSH='/home/basilbarge/.oh-my-bash'
+export OSH="$(echo ~)/.oh-my-bash"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="font"
+OSH_THEME="robbyrussell"
 
 # If you set OSH_THEME to "random", you can ignore themes you don't like.
 # OMB_THEME_RANDOM_IGNORED=("powerbash10k" "wanelo")
-# You can also specify the list from which a theme is randomly selected:
-# OMB_THEME_RANDOM_CANDIDATES=("font" "powerline-light" "minimal")
 
 # Uncomment the following line to use case-sensitive completion.
 # OMB_CASE_SENSITIVE="true"
@@ -30,7 +28,7 @@ OSH_THEME="font"
 # export UPDATE_OSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -81,10 +79,6 @@ OMB_USE_SUDO=true
 # OMB_PROMPT_SHOW_PYTHON_VENV=true  # enable
 # OMB_PROMPT_SHOW_PYTHON_VENV=false # disable
 
-# To enable/disable Spack environment information
-# OMB_PROMPT_SHOW_SPACK_ENV=true  # enable
-# OMB_PROMPT_SHOW_SPACK_ENV=false # disable
-
 # Which completions would you like to load? (completions can be found in ~/.oh-my-bash/completions/*)
 # Custom completions may be added to ~/.oh-my-bash/custom/completions/
 # Example format: completions=(ssh git bundler gem pip pip3)
@@ -109,7 +103,7 @@ aliases=(
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  bashmarks
+  colored-man-pages
 )
 
 # Which plugins would you like to conditionally load? (plugins can be found in ~/.oh-my-bash/plugins/*)
@@ -119,14 +113,8 @@ plugins=(
 #      plugins+=(tmux-autoattach)
 #  fi
 
-# If you want to reduce the initialization cost of the "tput" command to
-# initialize color escape sequences, you can uncomment the following setting.
-# This disables the use of the "tput" command, and the escape sequences are
-# initialized to be the ANSI version:
-#
-#OMB_TERM_USE_TPUT=no
-
 source "$OSH"/oh-my-bash.sh
+unset CDPATH
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -151,7 +139,23 @@ source "$OSH"/oh-my-bash.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-bash
 # users are encouraged to define aliases within the OSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias bashconfig="mate ~/.bashrc"
-# alias ohmybash="mate ~/.oh-my-bash"
+
+# Add custom bash aliases
+. ~/.bash_aliases
+LS_COLORS=
+
+export BAT_THEME="rose-pine"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add go to PATH
+export PATH=$PATH:/usr/local/go/bin
+. "$HOME/.cargo/env"
+
+# Add nvim to path
+
+export PATH="$HOME/neovim/bin:$PATH"
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"

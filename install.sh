@@ -19,7 +19,7 @@ if [[ $NAME = "Ubuntu" ]]; then
 	yes | sudo apt install stow
 	yes | sudo apt install tldr
 	yes | sudo apt install fzf
-	yes | sudo apt install rg
+	yes | sudo apt install ripgrep
 
 	BAT_NAME="batcat"
 

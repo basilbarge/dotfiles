@@ -11,13 +11,12 @@ if [[ $NAME = "Ubuntu" ]]; then
 	echo "Installing packages in Ubuntu"
 	yes | sudo apt install bat
 	yes | sudo apt install git
-	yes | sudo apt install zellij
 	yes | sudo apt install curl
 	yes | sudo apt install i3
 	yes | sudo apt install stow
 	yes | sudo apt install tldr
 	yes | sudo apt install fzf
-	yes | sudo apt install gum
+	yes | sudo apt install rg
 
 	BAT_NAME="batcat"
 
@@ -48,12 +47,11 @@ elif [[ $NAME = "Arch Linux" ]]; then
 	yes | sudo pacman -S bat
 	yes | sudo pacman -S git
 	yes | sudo pacman -S github-cli
-	yes | sudo pacman -S zellij
 	yes | sudo pacman -S curl
 	yes | sudo pacman -S eza
 	yes | sudo pacman -S stow
 	yes | sudo pacman -S fzf
-	yes | sudo pacman -S gum
+	yes | sudo pacman -S ripgrep
 
 	BAT_NAME="bat"
 

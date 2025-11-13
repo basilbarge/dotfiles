@@ -9,3 +9,4 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm install --lts
 
+exec bash 

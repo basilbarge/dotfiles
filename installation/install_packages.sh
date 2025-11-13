@@ -1,0 +1,58 @@
+#!/usr/bin/bash
+
+# Get OS related variables
+
+. /etc/os-release
+
+# Get useful global variables
+. "/home/basilbarge/dotfiles/installation/globals.sh"
+
+
+if [[ $OS_UBUNTU ]]; then
+	echo "Installing packages in Ubuntu"
+
+	sudo apt update
+
+	yes | sudo apt install bat
+	yes | sudo apt install git
+	yes | sudo apt install curl
+	yes | sudo apt install i3
+	yes | sudo apt install stow
+	yes | sudo apt install tldr
+	yes | sudo apt install fzf
+	yes | sudo apt install ripgrep
+
+	# Install eza
+	yes | sudo apt install gpg
+	sudo mkdir -p /etc/apt/keyrings
+	wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+	echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+	sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+	sudo apt install -y eza
+
+
+	# Install prequisites for neovim to build from source
+	yes | sudo apt-get install ninja-build gettext cmake unzip curl
+
+elif [[ $OS_ARCH ]]; then
+	echo "Installing packages for Arch Linux"
+	
+	sudo pacman -Syu
+
+	yes | sudo pacman -S bat
+	yes | sudo pacman -S git
+	yes | sudo pacman -S github-cli
+	yes | sudo pacman -S curl
+	yes | sudo pacman -S eza
+	yes | sudo pacman -S stow
+	yes | sudo pacman -S fzf
+	yes | sudo pacman -S ripgrep
+	yes | sudo pacman -S tldr
+	yes | sudo pacman -S inetutils
+
+	# Install prequisites for neovim to build from source
+	yes | sudo pacman -S base-devel cmake unzip ninja curl
+fi
+
+# Update tldr doc repository
+tldr -u

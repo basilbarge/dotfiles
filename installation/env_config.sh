@@ -6,9 +6,7 @@
 # Get custom helper functions
 . "/home/basilbarge/dotfiles/installation/functions.sh"
 
-DOTFILES_REPO=$PWD
-
-cd ~/dotfiles
+DOTFILES_REPO="~/dotfiles"
 
 if [[ !$(exists stow) && $OS_UBUNTU ]]; then
 	yes | sudo apt update

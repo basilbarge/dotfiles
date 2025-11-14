@@ -44,7 +44,7 @@ do
 
 	if [[ $DIR_BASE_NAME == "bash-config" ]]; then
 		stow --dir="/home/basilbarge/dotfiles" --target="/home/basilbarge/" --adopt $DIR_BASE_NAME
-	elif [[ $DIR_BASE_NAME == ".git" ]]; then
+	elif [[ $DIR_BASE_NAME == ".git" || $DIR_BASE_NAME == "installation" ]]; then
 		continue
 	else
 		stow --dir="/home/basilbarge/dotfiles" --target="/home/basilbarge" $DIR_BASE_NAME

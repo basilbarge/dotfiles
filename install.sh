@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 source "/home/basilbarge/dotfiles/installation/install_packages.sh"
 source "/home/basilbarge/dotfiles/installation/env_config.sh"

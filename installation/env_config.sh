@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Get custom helper functions
 . "/home/basilbarge/dotfiles/installation/globals.sh"

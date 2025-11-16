@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 function exists() {
 	if [ $(which $1 = "") ]; then

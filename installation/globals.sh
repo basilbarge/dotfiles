@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 OS_UBUNTU=($NAME = "Ubuntu")
 OS_ARCH=($NAME = "Arch Linux")

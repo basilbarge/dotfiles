@@ -20,9 +20,19 @@ elif [[ $OS_ARCH ]]; then
 fi
 
 # Build neovim from source
-git clone https://github.com/neovim/neovim ~/neovim
+if [ !$(-d ~/neovim) ]; then
+	git clone https://github.com/neovim/neovim ~/neovim
+fi
+
 cd ~/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
-git checkout stable
+
+while getopts "sn" flag; do
+	case "${flag}" in
+		s) git checkout stable ;;
+		n) git checkout nightly ;;
+	esac
+done
+
 sudo make install
 
 cd ~/dotfiles

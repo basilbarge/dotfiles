@@ -33,7 +33,7 @@ elif [[ !$(exists rg) && $OS_ARCH ]]; then
 fi
 
 # Install oh-my-bash for easy terminal customization
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" --unattended
 
 STOW_DIRS=$(find $DOTFILES_REPO -mindepth 1 -maxdepth 1 -type d)
 

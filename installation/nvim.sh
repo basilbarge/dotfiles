@@ -20,7 +20,7 @@ elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
 fi
 
 # Build neovim from source
-if [ !$(-d ~/neovim) ]; then
+if [ ! -d "/home/basilbarge/neovim" ]; then
 	git clone https://github.com/neovim/neovim ~/neovim
 fi
 

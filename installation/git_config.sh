@@ -45,7 +45,7 @@ elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
 	sudo pacman github-cli
 fi
 
-git reset --hard
+git stash
 
 git config --global core.editor "nvim"
 

@@ -9,9 +9,7 @@
 # Get custom helper functions
 . "/home/basilbarge/dotfiles/installation/functions.sh"
 
-echo "*******************************************"
-echo "**************CONFIGURING GIT**************"
-echo "*******************************************"
+demarcate "CONFIGURING GIT"
 
 exists git
 status=$?

@@ -8,6 +8,8 @@
 
 DOTFILES_REPO="/home/basilbarge/dotfiles"
 
+demarcate "CONFIGURING BASH ENVIRONMENT"
+
 exists stow
 status=$?
 

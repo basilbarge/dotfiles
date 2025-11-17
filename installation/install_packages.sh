@@ -7,6 +7,9 @@
 # Get useful global variables
 . "/home/basilbarge/dotfiles/installation/globals.sh"
 
+# Get helper functions
+. "/home/basilbarge/dotfiles/installation/functions.sh"
+
 
 if [[ $OS_UBUNTU ]]; then
 	echo "Installing packages in Ubuntu"
@@ -30,6 +33,8 @@ if [[ $OS_UBUNTU ]]; then
 	sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
 	sudo apt install -y eza
 
+	# Install gh cli
+	gh_install
 
 	# Install prequisites for neovim to build from source
 	yes | sudo apt-get install ninja-build gettext cmake unzip curl

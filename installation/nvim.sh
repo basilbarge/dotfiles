@@ -6,15 +6,13 @@
 # Get user defined helper functions
 . "/home/basilbarge/dotfiles/installation/functions.sh"
 
-if [[ $(exists nvim) ]]; then
-	echo "neovim is already installed"
-	exit 0
-fi
+exists nvim
+status=$?
 
-if [[ $OS_UBUNTU ]]; then
+if [[ "$status" -eq 1 && $OS_UBUNTU ]]; then
 	yes | sudo apt upgrade
 	yes | sudo apt-get install ninja-build gettext cmake unzip curl
-elif [[ $OS_ARCH ]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S base-devel cmake unzip ninja curl
 fi

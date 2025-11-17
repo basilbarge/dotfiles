@@ -8,26 +8,35 @@
 
 DOTFILES_REPO="/home/basilbarge/dotfiles"
 
-if [[ !$(exists stow) && $OS_UBUNTU ]]; then
+exists stow
+status=$?
+
+if [[ "$status" -eq 1 && $OS_UBUNTU ]]; then
 	yes | sudo apt update
 	yes | sudo apt install stow
-elif [[ !$(exists stow) && $OS_ARCH ]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S stow
 fi
 
-if [[ !$(exists $BAT_NAME) && $OS_UBUNTU ]]; then
+exists $BAT_NAME
+status=$?
+
+if [[ "$status" -eq 1 && $OS_UBUNTU ]]; then
 	yes | sudo apt update
 	yes | sudo apt install bat
-elif [[ !$(exists $BAT_NAME) && $OS_ARCH ]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S bat
 fi
 
-if [[ !$(exists rg) && $OS_UBUNTU ]]; then
+exists rg
+status=$?
+
+if [[ "$status" -eq 1 && $OS_UBUNTU ]]; then
 	yes | sudo apt update
 	yes | sudo apt install ripgrep
-elif [[ !$(exists rg) && $OS_ARCH ]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S ripgrep
 fi

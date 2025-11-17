@@ -13,26 +13,34 @@ echo "*******************************************"
 echo "**************CONFIGURING GIT**************"
 echo "*******************************************"
 
+exists git
+status=$?
 
-if [[ !$(exists git) && $OS_UBUNTU ]]; then
+if [[ "$status" -eq 1 && $OS_UBUNTU ]]; then
 	yes | sudo apt update
 	yes | sudo apt install git
-elif [[ !$(exists git) && $OS_ARCH ]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S git
 fi
 
-if [[ !$(exists $BAT_NAME) && $OS_UBUNTU ]]; then
+exists $BAT_NAME
+status=$?
+
+if [[ "$status" -eq 1 && $OS_UBUNTU ]]; then
 	yes | sudo apt update
 	yes | sudo apt install bat
-elif [[ !$(exists $BAT_NAME) && $OS_ARCH ]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S bat
 fi
 
-if [[ !$(exists gh) && $OS_UBUNTU ]]; then
+exists gh
+status=$?
+
+if [[ "$status" -eq 1 && $OS_UBUNTU ]]; then
 	gh_install
-elif [[ !$(exists gh) && $OS_ARCH ]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
 	sudo pacman -Syu
 	sudo pacman github-cli
 fi

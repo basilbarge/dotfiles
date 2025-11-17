@@ -30,6 +30,7 @@ while getopts "sn" flag; do
 	case "${flag}" in
 		s) git checkout stable ;;
 		n) git checkout nightly ;;
+		*) git checkout stable ;;
 	esac
 done
 

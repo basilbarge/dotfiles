@@ -6,6 +6,8 @@
 # Get user defined helper functions
 . "/home/basilbarge/dotfiles/installation/functions.sh"
 
+demarcate "BUILDING NVIM"
+
 exists nvim
 status=$?
 

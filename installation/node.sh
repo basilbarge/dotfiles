@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+. "~/dotfiles/installation/functions.sh"
+
+demarcate "INSTALLING NVM AND NODE LTS"
+
 # Install nvm and LTS of node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 

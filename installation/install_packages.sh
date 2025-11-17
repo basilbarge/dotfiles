@@ -10,6 +10,8 @@
 # Get helper functions
 . "/home/basilbarge/dotfiles/installation/functions.sh"
 
+demarcate "INSTALLING PACKAGES"
+
 
 if [[ $OS_UBUNTU ]]; then
 	echo "Installing packages in Ubuntu"

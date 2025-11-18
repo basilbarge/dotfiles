@@ -26,6 +26,7 @@ if [[ $OS_UBUNTU ]]; then
 	yes | sudo apt install tldr
 	yes | sudo apt install fzf
 	yes | sudo apt install ripgrep
+	yes | sudo apt install libssl-dev
 
 	# Install eza
 	yes | sudo apt install gpg

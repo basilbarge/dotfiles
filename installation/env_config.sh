@@ -16,7 +16,7 @@ status=$?
 if [[ "$status" -eq 1 && $OS_UBUNTU == 0 ]]; then
 	yes | sudo apt update
 	yes | sudo apt install stow
-elif [[ "$status" -eq 1 && $OS_ARCH == 0]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH == 0 ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S stow
 fi

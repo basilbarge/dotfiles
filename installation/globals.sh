@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
 
-OS_UBUNTU=($NAME = "Ubuntu")
-OS_ARCH=($NAME = "Arch Linux")
+# Get OS related variables
+. /etc/os-release
+
+if [[ $NAME == "Ubuntu" ]]; then
+	OS_UBUNTU=0
+	OS_ARCH=1
+elif [[ $NAME == "Arch Linux" ]]; then
+	OS_UBUNTU=1
+	OS_ARCH=0
+fi
 
 if [ $OS_UBUNTU ]; then
 	BAT_NAME="batcat"
-elif [ $OS_UBUNTU ]; then
+elif [ $OS_ARCH ]; then
 	BAT_NAME="bat"
 fi

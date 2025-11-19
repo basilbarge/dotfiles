@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# Get OS related variables
-
-. /etc/os-release
-
 # Get useful global variables
 . "/home/basilbarge/dotfiles/installation/globals.sh"
 

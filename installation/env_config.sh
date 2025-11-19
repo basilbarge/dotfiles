@@ -13,10 +13,10 @@ demarcate "CONFIGURING BASH ENVIRONMENT"
 exists stow
 status=$?
 
-if [[ "$status" -eq 1 && $OS_UBUNTU ]]; then
+if [[ "$status" -eq 1 && $OS_UBUNTU == 0 ]]; then
 	yes | sudo apt update
 	yes | sudo apt install stow
-elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH == 0]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S stow
 fi
@@ -24,10 +24,10 @@ fi
 exists $BAT_NAME
 status=$?
 
-if [[ "$status" -eq 1 && $OS_UBUNTU ]]; then
+if [[ "$status" -eq 1 && $OS_UBUNTU == 0 ]]; then
 	yes | sudo apt update
 	yes | sudo apt install bat
-elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH == 0 ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S bat
 fi
@@ -35,10 +35,10 @@ fi
 exists rg
 status=$?
 
-if [[ "$status" -eq 1 && $OS_UBUNTU ]]; then
+if [[ "$status" -eq 1 && $OS_UBUNTU == 0 ]]; then
 	yes | sudo apt update
 	yes | sudo apt install ripgrep
-elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH == 0 ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S ripgrep
 fi

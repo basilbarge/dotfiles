@@ -9,7 +9,7 @@
 demarcate "INSTALLING PACKAGES"
 
 
-if [[ $OS_UBUNTU ]]; then
+if [[ $OS_UBUNTU == 0 ]]; then
 	echo "Installing packages in Ubuntu"
 
 	sudo apt update
@@ -38,7 +38,7 @@ if [[ $OS_UBUNTU ]]; then
 	# Install prequisites for neovim to build from source
 	yes | sudo apt-get install ninja-build gettext cmake unzip curl
 
-elif [[ $OS_ARCH ]]; then
+elif [[ $OS_ARCH == 0 ]]; then
 	echo "Installing packages for Arch Linux"
 	
 	sudo pacman -Syu

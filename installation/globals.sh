@@ -11,8 +11,8 @@ elif [[ $NAME == "Arch Linux" ]]; then
 	OS_ARCH=0
 fi
 
-if [ $OS_UBUNTU ]; then
+if [[ $OS_UBUNTU == 0 ]]; then
 	BAT_NAME="batcat"
-elif [ $OS_ARCH ]; then
+elif [[ $OS_ARCH == 0 ]]; then
 	BAT_NAME="bat"
 fi

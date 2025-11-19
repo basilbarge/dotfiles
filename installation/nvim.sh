@@ -11,10 +11,10 @@ demarcate "BUILDING NVIM"
 exists nvim
 status=$?
 
-if [[ "$status" -eq 1 && $OS_UBUNTU ]]; then
+if [[ "$status" == 1 && $OS_UBUNTU == 0 ]]; then
 	yes | sudo apt upgrade
 	yes | sudo apt-get install ninja-build gettext cmake unzip curl
-elif [[ "$status" -eq 1 && $OS_ARCH ]]; then
+elif [[ "$status" -eq 1 && $OS_ARCH == 0 ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S base-devel cmake unzip ninja curl
 fi

@@ -30,6 +30,7 @@ set.softtabstop = 4
 set.number = true
 set.relativenumber = true
 set.signcolumn = "yes:1"
+set.wrap = false
 
 set.termguicolors = true
 

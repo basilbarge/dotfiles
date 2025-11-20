@@ -5,21 +5,21 @@ vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>")
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y"]])
 vim.keymap.set("n", "<leader Y", [["+Y"]])
 
-vim.keymap.set("", "<up>", "<nop>", { noremap = true, silent = true })
-vim.keymap.set("", "<down>", "<nop>", { noremap = true, silent = true })
-vim.keymap.set("", "<left>", "<nop>", { noremap = true, silent = true })
-vim.keymap.set("", "<right>", "<nop>", { noremap = true, silent = true })
-vim.keymap.set("", "<C-up>", "<nop>", { noremap = true, silent = true })
-vim.keymap.set("", "<C-down>", "<nop>", { noremap = true, silent = true })
-vim.keymap.set("", "<C-left>", "<nop>", { noremap = true, silent = true })
-vim.keymap.set("", "<C-right>", "<nop>", { noremap = true, silent = true })
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set("", "<up>", "<nop>", opts)
+vim.keymap.set("", "<down>", "<nop>", opts)
+vim.keymap.set("", "<left>", "<nop>", opts)
+vim.keymap.set("", "<right>", "<nop>", opts)
+vim.keymap.set("", "<C-up>", "<nop>", opts)
+vim.keymap.set("", "<C-down>", "<nop>", opts)
+vim.keymap.set("", "<C-left>", "<nop>", opts)
+vim.keymap.set("", "<C-right>", "<nop>", opts)
 
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 
 local set = vim.opt
-
-local opts = { noremap = true, silent = true }
 
 vim.cmd("set autochdir")
 --set.autochdir = true

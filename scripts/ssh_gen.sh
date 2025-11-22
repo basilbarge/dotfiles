@@ -3,7 +3,7 @@
 while getopts 'e:' opt; do
 	case "${opt}" in
 		e) email=$OPTARG ;;
-		*) fatal 'bad option' ;;
+		*) echo 'bad option'; exit 1 ;;
  esac
 done
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Get useful global variables
-. "/home/basilbarge/dotfiles/installation/globals.sh"
+. "/home/$USER/dotfiles/installation/globals.sh"
 
 # Get helper functions
-. "/home/basilbarge/dotfiles/installation/functions.sh"
+. "/home/$USER/dotfiles/installation/functions.sh"
 
 demarcate "INSTALLING PACKAGES"
 

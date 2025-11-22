@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # Get custom helper functions
-. "/home/basilbarge/dotfiles/installation/globals.sh"
+. "/home/$USER/dotfiles/installation/globals.sh"
 
 # Get custom helper functions
-. "/home/basilbarge/dotfiles/installation/functions.sh"
+. "/home/$USER/dotfiles/installation/functions.sh"
 
-DOTFILES_REPO="/home/basilbarge/dotfiles"
+DOTFILES_REPO="/home/$USER/dotfiles"
 
 demarcate "CONFIGURING BASH ENVIRONMENT"
 
@@ -53,12 +53,12 @@ for DIR in $STOW_DIRS
 do
 	DIR_BASE_NAME=$(basename $DIR)
 
-	if [[ $DIR_BASE_NAME == "bash-config" ]]; then
-		stow --dir="/home/basilbarge/dotfiles" --target="/home/basilbarge/" --adopt $DIR_BASE_NAME
-	elif [[ $DIR_BASE_NAME == ".git" || $DIR_BASE_NAME == "installation" ]]; then
+	if [[ $DIR_BASE_NAME = "bash-config" ]]; then
+		stow --dir="/home/$USER/dotfiles" --target="/home/$USER/" --adopt $DIR_BASE_NAME
+	elif [[ $DIR_BASE_NAME = ".git" || $DIR_BASE_NAME = "installation" ]]; then
 		continue
 	else
-		stow --dir="/home/basilbarge/dotfiles" --target="/home/basilbarge" $DIR_BASE_NAME
+		stow --dir="/home/$USER/dotfiles" --target="/home/$USER" $DIR_BASE_NAME
 	fi
 done
 

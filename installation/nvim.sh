@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Get useful global variables
-. "/home/basilbarge/dotfiles/installation/globals.sh"
+. "/home/$USER/dotfiles/installation/globals.sh"
 
 # Get user defined helper functions
-. "/home/basilbarge/dotfiles/installation/functions.sh"
+. "/home/$USER/dotfiles/installation/functions.sh"
 
 demarcate "BUILDING NVIM"
 
@@ -20,7 +20,7 @@ elif [[ "$status" -eq 1 && $OS_ARCH == 0 ]]; then
 fi
 
 # Build neovim from source
-if [ ! -d "/home/basilbarge/neovim" ]; then
+if [ ! -d "/home/$USER/neovim" ]; then
 	git clone https://github.com/neovim/neovim ~/neovim
 fi
 

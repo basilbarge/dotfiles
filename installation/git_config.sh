@@ -4,10 +4,10 @@
 . /etc/os-release
 
 # Get helpful global variables
-. "/home/basilbarge/dotfiles/installation/globals.sh"
+. "/home/$USER/dotfiles/installation/globals.sh"
 
 # Get custom helper functions
-. "/home/basilbarge/dotfiles/installation/functions.sh"
+. "/home/$USER/dotfiles/installation/functions.sh"
 
 demarcate "CONFIGURING GIT"
 

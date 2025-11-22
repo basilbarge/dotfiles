@@ -14,10 +14,10 @@ demarcate "CONFIGURING GIT"
 exists git
 status=$?
 
-if [[ "$status" -eq 1 && $OS_UBUNTU == 0 ]]; then
+if [[ "$status" = 1 && $OS_UBUNTU = 0 ]]; then
 	yes | sudo apt update
 	yes | sudo apt install git
-elif [[ "$status" -eq 1 && $OS_ARCH == 0 ]]; then
+elif [[ "$status" = 1 && $OS_ARCH = 0 ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S git
 fi
@@ -25,10 +25,10 @@ fi
 exists $BAT_NAME
 status=$?
 
-if [[ "$status" -eq 1 && $OS_UBUNTU == 0 ]]; then
+if [[ "$status" = 1 && $OS_UBUNTU = 0 ]]; then
 	yes | sudo apt update
 	yes | sudo apt install bat
-elif [[ "$status" -eq 1 && $OS_ARCH == 0 ]]; then
+elif [[ "$status" = 1 && $OS_ARCH = 0 ]]; then
 	yes | sudo pacman -Syu
 	yes | sudo pacman -S bat
 fi
@@ -36,9 +36,9 @@ fi
 exists gh
 status=$?
 
-if [[ "$status" -eq 1 && $OS_UBUNTU == 0 ]]; then
+if [[ "$status" = 1 && $OS_UBUNTU = 0 ]]; then
 	gh_install
-elif [[ "$status" -eq 1 && $OS_ARCH == 0 ]]; then
+elif [[ "$status" = 1 && $OS_ARCH = 0 ]]; then
 	sudo pacman -Syu
 	sudo pacman github-cli
 fi

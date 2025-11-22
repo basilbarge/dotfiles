@@ -6,6 +6,19 @@
 # Get user defined helper functions
 . "/home/$USER/dotfiles/installation/functions.sh"
 
+while getopts "sn" flag; do
+	case "${flag}" in
+		s) git checkout stable ;;
+		n) git checkout nightly ;;
+		*) git checkout stable ;;
+	esac
+done
+
+if [[ $OPTIND = 1 ]]; then
+	echo "Please supply script with version of nvim to install (-s for stable, -n for nightly)"
+	exit 1
+fi
+
 demarcate "BUILDING NVIM"
 
 exists nvim
@@ -25,14 +38,6 @@ if [ ! -d "/home/$USER/neovim" ]; then
 fi
 
 cd ~/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
-
-while getopts "sn" flag; do
-	case "${flag}" in
-		s) git checkout stable ;;
-		n) git checkout nightly ;;
-		*) git checkout stable ;;
-	esac
-done
 
 sudo make install
 

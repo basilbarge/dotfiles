@@ -23,6 +23,7 @@ if [[ $OS_UBUNTU = 0 ]]; then
 	yes | sudo apt install fzf
 	yes | sudo apt install ripgrep
 	yes | sudo apt install libssl-dev
+	yes | sudo apt install tmux
 
 	# Install eza
 	yes | sudo apt install gpg
@@ -53,6 +54,7 @@ elif [[ $OS_ARCH = 0 ]]; then
 	yes | sudo pacman -S ripgrep
 	yes | sudo pacman -S tldr
 	yes | sudo pacman -S inetutils
+	yes | sudo pacman -S tmux
 
 	# Install prequisites for neovim to build from source
 	yes | sudo pacman -S base-devel cmake unzip ninja curl

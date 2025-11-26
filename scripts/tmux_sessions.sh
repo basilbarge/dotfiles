@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dirs=("${SESSION_DIRS:-"/home/$USER"}" "/home/$USER")
+dirs=("${SESSION_DIRS:-"/home/$USER"}")
 
 dir_list=$(echo "${dirs[@]}")
 

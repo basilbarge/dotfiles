@@ -57,6 +57,8 @@ do
 		stow --dir="/home/$USER/dotfiles" --target="/home/$USER/" --adopt $DIR_BASE_NAME
 	elif [[ $DIR_BASE_NAME = ".git" || $DIR_BASE_NAME = "installation" ]]; then
 		continue
+	elif [[ $DIR_BASE_NAME = "scripts" ]]; then
+		sudo stow --dir="/home/$USER/dotfiles" --target="/usr/local/bin" $DIR_BASE_NAME
 	else
 		stow --dir="/home/$USER/dotfiles" --target="/home/$USER" $DIR_BASE_NAME
 	fi

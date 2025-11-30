@@ -140,6 +140,34 @@ unset CDPATH
 # users are encouraged to define aliases within the OSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# FZF THEMEING
+# rose-pine-main
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:#e0def4,fg+:#908caa,bg:#191724,bg+:#1f1d2e
+  --color=hl:#9ccfd8,hl+:#9ccfd8,info:#f6c177,marker:#31748f
+  --color=prompt:#eb6f92,spinner:#c4a7e7,pointer:#c4a7e7,header:#9ccfd8
+  --color=border:#26233a,label:#ebbcba,query:#e0def4
+  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
+  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
+
+# Uncomment for rose-pine-moon
+#export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+#  --color=fg:#e0def4,fg+:#908caa,bg:#232136,bg+:#2a273f
+#  --color=hl:#9ccfd8,hl+:#9ccfd8,info:#f6c177,marker:#3e8fb0
+#  --color=prompt:#eb6f92,spinner:#c4a7e7,pointer:#c4a7e7,header:#9ccfd8
+#  --color=border:#393552,label:#ea9a97,query:#e0def4
+#  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
+#  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
+
+# Uncomment for rose-pine-dawn
+#export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+#  --color=fg:#575279,fg+:#797593,bg:#faf4ed,bg+:#fffaf3
+#  --color=hl:#56949f,hl+:#56949f,info:#ea9d34,marker:#56949f
+#  --color=prompt:#b4637a,spinner:#c4a7e7,pointer:#c4a7e7,header:#286983
+#  --color=border:#f2e9e1,label:#ea9a97,query:#575279
+#  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
+#  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
+
 # Add custom bash aliases
 . ~/.bash_aliases
 LS_COLORS=

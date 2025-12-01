@@ -2,9 +2,7 @@
 
 dirs=("${SESSION_DIRS:-"/home/$USER"}")
 
-dir_list=$(echo "${dirs[@]}")
-
-chosen_dir=$(find $dir_list -mindepth 1 -maxdepth 1 -type d | fzf)
+chosen_dir=$(find -L $SESSION_DIRS -mindepth 1 -maxdepth 1 -type d | fzf)
 
 if [[ ! -d $chosen_dir ]]; then
 	echo "Chosen directory doesn't exist"

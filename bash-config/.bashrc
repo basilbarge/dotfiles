@@ -172,6 +172,8 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 . ~/.bash_aliases
 LS_COLORS=
 
+export SESSION_DIRS="/home/$USER/Projects"
+
 export BAT_THEME="rose-pine"
 
 export NVM_DIR="$HOME/.nvm"

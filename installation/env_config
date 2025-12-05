@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Get custom helper functions
-. "/home/$USER/dotfiles/installation/globals.sh"
+. "/home/$USER/dotfiles/installation/globals"
 
 # Get custom helper functions
-. "/home/$USER/dotfiles/installation/functions.sh"
+. "/home/$USER/dotfiles/installation/functions"
 
 DOTFILES_REPO="/home/$USER/dotfiles"
 

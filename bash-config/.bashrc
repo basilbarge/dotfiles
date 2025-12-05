@@ -172,7 +172,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 . ~/.bash_aliases
 LS_COLORS=
 
-export SESSION_DIRS="/home/$USER/Projects"
+export SESSION_DIRS="/home/$USER/Projects /home/$USER/Proj"
 
 export BAT_THEME="rose-pine"
 

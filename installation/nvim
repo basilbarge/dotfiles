@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Get useful global variables
-. "/home/$USER/dotfiles/installation/globals.sh"
+. "/home/$USER/dotfiles/installation/globals"
 
 # Get user defined helper functions
-. "/home/$USER/dotfiles/installation/functions.sh"
+. "/home/$USER/dotfiles/installation/functions"
 
 while getopts "sn" flag; do
 	case "${flag}" in

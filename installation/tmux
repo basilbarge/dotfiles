@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Get useful global vars
-. "/home/$USER/dotfiles/installation/globals.sh"
+. "/home/$USER/dotfiles/installation/globals"
 
 # Get global helper functions
-. "/home/$USER/dotfiles/installation/functions.sh"
+. "/home/$USER/dotfiles/installation/functions"
 
 tpm_dir="/home/$USER/.tmux/plugins/tpm"
 

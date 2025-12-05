@@ -19,3 +19,5 @@ alias la='eza -A'
 alias l='eza -F'
 alias lg='lazygit'
 alias grep='rg'
+
+alias ts="tmux_sessions"

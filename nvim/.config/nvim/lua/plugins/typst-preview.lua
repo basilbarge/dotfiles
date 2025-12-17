@@ -9,7 +9,7 @@ return {
 		vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
 			pattern = {'*.typ'},
 			callback = function()
-				vim.cmd(":TypstPreview")
+				vim.keymap.set("n", "<leader>tp", ":TypstPreview<CR>")
 				vim.keymap.set("n", "<leader>sc", ":TypstPreviewSyncCursor<CR>")
 			end
 		})

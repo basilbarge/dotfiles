@@ -172,7 +172,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 . ~/.bash_aliases
 LS_COLORS=
 
-export SESSION_DIRS="/home/$USER/Projects"
+export SESSION_DIRS="/home/$USER/Projects /home/$USER/Proj"
 
 export BAT_THEME="rose-pine"
 
@@ -191,3 +191,6 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # Add custom scripts to PATH
 export PATH="$PATH:/home/$USER/dotfiles/scripts"
+
+# SET XDG_DATA_HOME for local typst package installation
+export XDG_DATA_HOME="$HOME/.local/share"

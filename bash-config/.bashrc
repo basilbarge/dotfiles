@@ -174,7 +174,7 @@ LS_COLORS=
 
 export SESSION_DIRS="/home/$USER/Projects /home/$USER/Proj"
 
-export BAT_THEME="rose-pine"
+export BAT_THEME="gruvbox-dark"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

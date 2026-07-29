@@ -19,6 +19,8 @@ vim.keymap.set("", "<C-right>", "<nop>", opts)
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 
+vim.keymap.set("t", "<esc><esc>", "<C-\\>")
+
 local set = vim.opt
 
 vim.cmd("set autochdir")

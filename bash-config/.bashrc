@@ -172,12 +172,12 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 . ~/.bash_aliases
 LS_COLORS=
 
-export SESSION_DIRS="/home/$USER/Projects /home/$USER/Proj"
+export SESSION_DIRS="/home/$USER/Projects /home/$USER/Proj_2025 /home/$USER/Proj_2027"
 
 export BAT_THEME="gruvbox-dark"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Add go to PATH

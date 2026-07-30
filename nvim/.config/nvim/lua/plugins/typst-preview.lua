@@ -11,6 +11,7 @@ return {
 			callback = function()
 				vim.keymap.set("n", "<leader>tp", ":TypstPreview<CR>")
 				vim.keymap.set("n", "<leader>sc", ":TypstPreviewSyncCursor<CR>")
+				vim.cmd(":setlocal spell spelllang=en_us")
 			end
 		})
 	end,

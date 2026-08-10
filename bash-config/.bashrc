@@ -141,14 +141,20 @@ unset CDPATH
 # For a full list of active aliases, run `alias`.
 
 # FZF THEMEING
+# gruvbox-dark, soft
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
+" --color=bg+:#3c3836,bg:#32302f,spinner:#8ec07c,hl:#83a598"\
+" --color=fg:#bdae93,header:#83a598,info:#fabd2f,pointer:#8ec07c"\
+" --color=marker:#8ec07c,fg+:#ebdbb2,prompt:#fabd2f,hl+:#83a598"
+
 # rose-pine-main
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color=fg:#e0def4,fg+:#908caa,bg:#191724,bg+:#1f1d2e
-  --color=hl:#9ccfd8,hl+:#9ccfd8,info:#f6c177,marker:#31748f
-  --color=prompt:#eb6f92,spinner:#c4a7e7,pointer:#c4a7e7,header:#9ccfd8
-  --color=border:#26233a,label:#ebbcba,query:#e0def4
-  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
-  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+#   --color=fg:#e0def4,fg+:#908caa,bg:#191724,bg+:#1f1d2e
+#   --color=hl:#9ccfd8,hl+:#9ccfd8,info:#f6c177,marker:#31748f
+#   --color=prompt:#eb6f92,spinner:#c4a7e7,pointer:#c4a7e7,header:#9ccfd8
+#   --color=border:#26233a,label:#ebbcba,query:#e0def4
+#   --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
+#   --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
 
 # Uncomment for rose-pine-moon
 #export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'

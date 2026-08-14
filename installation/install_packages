@@ -25,6 +25,12 @@ if [[ $OS_UBUNTU = 0 ]]; then
 	yes | sudo apt install libssl-dev
 	yes | sudo apt install tmux
 
+	# Install charmbracelet gum
+	sudo mkdir -p /etc/apt/keyrings
+	curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+	echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+	sudo apt update && sudo apt install gum
+
 	# Install eza
 	yes | sudo apt install gpg
 	sudo mkdir -p /etc/apt/keyrings
@@ -55,6 +61,7 @@ elif [[ $OS_ARCH = 0 ]]; then
 	yes | sudo pacman -S tldr
 	yes | sudo pacman -S inetutils
 	yes | sudo pacman -S tmux
+	yes | sudo pacman -S gum
 
 	# Install prequisites for neovim to build from source
 	yes | sudo pacman -S base-devel cmake unzip ninja curl

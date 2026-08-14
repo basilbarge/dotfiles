@@ -1,8 +1,8 @@
 return {
-	{
-		dir = "~/plugins/term.nvim",
-		config = function()
-			require "term"
-		end
-	}
+-- 	{
+-- 		dir = "~/plugins/term.nvim",
+-- 		config = function()
+-- 			require "term"
+-- 		end
+-- 	}
 }

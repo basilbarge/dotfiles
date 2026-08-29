@@ -43,7 +43,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "rofi -show combi -icon-theme Papirus"
+local menu        = "rofi -show combi -combi-modes \"window,run,drun\" -icon-theme Papirus"
 
 
 -------------------

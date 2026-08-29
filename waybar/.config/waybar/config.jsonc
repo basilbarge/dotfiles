@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "bottom",
+  "position": "top",
   "modules-left": [
     "custom/logo",
     "clock",
@@ -24,13 +24,12 @@
     "custom/colorpicker",
     "bluetooth",
     "group/audio",
-    "custom/hotspot",
     "group/networking",
     "battery"
   ],
   "reload_style_on_change": true,
   "custom/logo": {
-    "format": "󰊠",
+    "format": "",
     "tooltip": false,
     "on-click": "~/.config/rofi/scripts/powermenu.sh"
   },
@@ -86,16 +85,17 @@
     "return-type": "json"
   },
   "hyprland/workspaces": {
-    "format": "<span font='18px'>{icon}</span>",
-    "format-icons": {
-      "1": "१",
-      "2": "२",
-      "3": "३",
-      "4": "४",
-      "5": "५",
-      "6": "६",
-      "default": ""
-    },
+	"format": "{icon}",
+	"format-icons": {
+		"1": "",
+		"2": "",
+		"3": "",
+		"4": "",
+		"5": "",
+		"6": "",
+		"active": "",
+		"default": "" 
+	},
     "persistent-workspaces": {
       "*": [
         1,
@@ -198,10 +198,10 @@
     "on-click": "rofi-bluetooth",
   },
   "pulseaudio": {
-    "format": "{icon}",
+    "format": "{volume}% {icon}",
     "format-bluetooth": "󰂰",
     "format-muted": "",
-    "tooltip-format": "{volume}% {icon}",
+    "tooltip-format": "{volume}%",
     "format-icons": {
       "headphones": "",
       "bluetooth": "󰥰",
@@ -211,9 +211,9 @@
       "portable": "",
       "car": "",
       "default": [
-        "🕨",
-        "🕩",
-        "🕪"
+		  "",
+		  "",
+		  "",
       ]
     },
     "scroll-step": 5,
@@ -247,20 +247,8 @@
   },
   "pulseaudio/slider": {
     "min": 0,
-    "max": 140,
+    "max": 100,
     "orientation": "horizontal"
-  },
-  "custom/hotspot": {
-    "format": "{icon}",
-    "interval": 1,
-    "tooltip": true,
-    "return-type": "json",
-    "format-icons": {
-      "active": "󱜠",
-      "notactive": "󱜡"
-    },
-    "exec": "waybar-hotspot -a watch",
-    "on-click": "waybar-hotspot -a toggle",
   },
   "network": {
     "format-wifi": " ",

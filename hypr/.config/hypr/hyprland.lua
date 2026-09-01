@@ -35,6 +35,17 @@ hl.monitor({
 	scale    = "auto",
 })
 
+hl.monitor({
+	output    = "DP-1",
+	mode      = "preferred",
+	position  = "auto-left",
+	scale     = "auto",
+	transform = 3,
+})
+
+-- Clamshell mode
+hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd('~/dotfiles/scripts/clamshell.sh "open"'))
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd('~/dotfiles/scripts/clamshell.sh "close"'))
 
 ---------------------
 ---- MY PROGRAMS ----

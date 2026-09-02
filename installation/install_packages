@@ -51,6 +51,11 @@ elif [[ $OS_ARCH = 0 ]]; then
 
 	yes | sudo pacman -S github-cli
 	yes | sudo pacman -S inetutils
+	yes | sudo pacman -S brightnessctl
+	yes | sudo pacman -S hyprpaper
+	yes | sudo pacman -S pavucontrol
+	yes | sudo pacman -S networkmanager
+	yes | sudo pacman -S networkmanager-dmenu
 
 	# Install prequisites for neovim to build from source
 	yes | sudo pacman -S base-devel cmake unzip ninja curl

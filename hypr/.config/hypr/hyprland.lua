@@ -29,14 +29,14 @@ hl.monitor({
 })
 
 hl.monitor({
-	output   = "HDMI-A-1",
+	output   = "DP-4",
 	mode     = "preferred",
 	position = "0x0",
 	scale    = "auto",
 })
 
 hl.monitor({
-	output    = "DP-1",
+	output    = "DP-3",
 	mode      = "preferred",
 	position  = "auto-left",
 	scale     = "auto",
@@ -382,4 +382,48 @@ hl.window_rule({
 
 	move  = "20 monitor_h-120",
 	float = true,
+})
+
+hl.workspace_rule({
+	workspace = "1",
+	monitor = "DP-4"
+})
+
+hl.workspace_rule({
+	workspace = "2",
+	monitor = "DP-4"
+})
+hl.workspace_rule({
+	workspace = "3",
+	monitor = "DP-4"
+})
+hl.workspace_rule({
+	workspace = "4",
+	monitor = "DP-4"
+})
+hl.workspace_rule({
+	workspace = "5",
+	monitor = "DP-4"
+})
+
+hl.workspace_rule({
+	workspace = "6",
+	monitor = "DP-3"
+})
+
+hl.workspace_rule({
+	workspace = "7",
+	monitor = "DP-3"
+})
+hl.workspace_rule({
+	workspace = "8",
+	monitor = "DP-3"
+})
+hl.workspace_rule({
+	workspace = "9",
+	monitor = "DP-3"
+})
+hl.workspace_rule({
+	workspace = "10",
+	monitor = "DP-3"
 })

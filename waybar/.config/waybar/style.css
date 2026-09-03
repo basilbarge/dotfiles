@@ -92,6 +92,7 @@ window#waybar {
 
 #workspaces button {
 	color: @theme-yellow-soft;
+	padding: 0 5px;
 }
 
 #workspaces button.active {

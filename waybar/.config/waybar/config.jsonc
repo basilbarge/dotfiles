@@ -86,6 +86,7 @@
   },
   "hyprland/workspaces": {
 	"format": "{icon}",
+	"all-outputs": false,
 	"format-icons": {
 		"1": "",
 		"2": "",
@@ -94,17 +95,34 @@
 		"5": "",
 		"6": "",
 		"active": "",
-		"default": "" 
+		"default": "" 
 	},
     "persistent-workspaces": {
-      "*": [
+      "DP-4": [
         1,
         2,
         3,
         4,
         5,
-        6
-      ]
+        6,
+        7,
+        8,
+        9,
+        10,
+      ],
+      "DP-3": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+      ],
     }
   },
   "hyprland/window": {

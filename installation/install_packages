@@ -59,6 +59,36 @@ elif [[ $OS_ARCH = 0 ]]; then
 
 	# Install prequisites for neovim to build from source
 	yes | sudo pacman -S base-devel cmake unzip ninja curl
+elif [[ $OS_FEDORA = 0 ]]; then
+	echo "Installing packages for Arch Linux"
+	
+	sudo dnf upgrade --refresh
+
+	for package in "${packages[@]}"; do
+		yes | sudo dnf "$package"
+	done
+
+	yes | sudo dnf install yum
+
+	# Install github cli
+	sudo dnf install dnf5-plugins
+	sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
+	sudo dnf install gh
+
+	# Install charm go
+	echo '[charm]
+	name=Charm
+	baseurl=https://repo.charm.sh/yum/
+	enabled=1
+	gpgcheck=1
+	gpgkey=https://repo.charm.sh/yum/gpg.key' | sudo tee /etc/yum.repos.d/charm.repo
+	sudo yum install charm
+
+	# Install neovim
+	yes | sudo dnf neovim
+
+	# Install tmux plugin managers
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
 # Update tldr doc repository

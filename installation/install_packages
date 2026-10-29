@@ -8,7 +8,7 @@
 
 demarcate "INSTALLING PACKAGES"
 
-packages=( "bat" "git" "curl" "stow" "eza" "fzf" "ripgrep" "tmux" "gum" )
+packages=( "bat" "git" "curl" "stow" "eza" "fzf" "ripgrep" "tmux" "gum" "ghostty")
 
 if [[ $OS_UBUNTU = 0 ]]; then
 	echo "Installing packages in Ubuntu"

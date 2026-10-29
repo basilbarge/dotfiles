@@ -17,7 +17,7 @@ if [[ $OS_UBUNTU = 0 ]]; then
 
 	# Install common packages
 	for package in "${packages[@]}"; do
-		yes | sudo apt install libssl-dev
+		yes | sudo apt install $package
 	done
 
 	yes | sudo apt install libssl-dev
